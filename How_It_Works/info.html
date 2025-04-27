@@ -1,0 +1,245 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How It Works - FluentSpeech</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <style>
+    /* Smooth transition for hover and focus effects */
+    .interactive-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      cursor: pointer;
+      outline-offset: 4px;
+    }
+    .interactive-card:hover,
+    .interactive-card:focus {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.5), 0 4px 6px -4px rgba(59, 130, 246, 0.4);
+      background-color: #e0f2fe; /* lighter sky blue */
+    }
+  </style>
+    <link rel="icon" href="assets/logo2.png" type="image/png" sizes="16x16" />
+</head>
+<body class="bg-sky-100 min-h-screen flex flex-col">
+  <header class="bg-gray-100 shadow">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <h1
+        class="text-2xl font-bold text-gray-900 cursor-pointer select-none flex items-center space-x-3"
+        id="logo"
+        tabindex="0"
+        role="button"
+        aria-label="FluentSpeech logo, click to welcome"
+      >
+        <img
+          alt="FluentSpeech logo, a stylized speech bubble icon"
+          aria-hidden="true"
+          class="w-10 h-10"
+          height="35"
+          src="assets/logo3.svg"
+          width="35"
+        />
+        <span>FluentSpeech</span>
+      </h1>
+      <nav class="space-x-6 text-gray-900 font-medium text-sm sm:text-base">
+        <a class="hover:text-blue-600 transition-colors duration-300" href="/HomePage/home.html">Home</a>
+        <a class="hover:text-blue-600 transition-colors duration-300" href="/featuresPage/features.html">Features</a>
+        <a class="hover:text-blue-600 transition-colors duration-300" href="/CoursesPage/course.html">Courses</a>
+        <a class="hover:text-blue-600 transition-colors duration-300" href="/contact us/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow flex items-center">
+    <section class="w-full max-w-7xl mx-auto px-6 py-12 text-center">
+      <h2 class="text-3xl font-semibold text-gray-900 select-none">
+        How It Works
+      </h2>
+      <p class="mt-3 max-w-3xl mx-auto text-gray-700 text-base sm:text-lg">
+        Understand the core concepts that power FluentSpeech and how they help you improve your communication skills.
+      </p>
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto text-left">
+        <div
+          tabindex="0"
+          role="button"
+          aria-label="Real Time Analysis card"
+          class="interactive-card bg-white rounded-lg p-6 shadow flex flex-col"
+          onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
+         
+        >
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-wave-square" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Real Time Analysis</h3>
+          <p class="text-gray-600 text-sm sm:text-base flex-grow">
+            Provides instant feedback on your speech to help you improve your fluency and clarity.
+          </p>
+        </div>
+        <div
+          tabindex="0"
+          role="button"
+          aria-label="AI Chatbot card"
+          class="interactive-card bg-white rounded-lg p-6 shadow flex flex-col"
+          onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
+          
+        >
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-robot" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">AI Chatbot</h3>
+          <p class="text-gray-600 text-sm sm:text-base flex-grow">
+            A virtual assistant that chats with users, answering questions and providing help anytime.
+          </p>
+        </div>
+        <div
+          tabindex="0"
+          role="button"
+          aria-label="Doctor Consultation card"
+          class="interactive-card bg-white rounded-lg p-6 shadow flex flex-col"
+          onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
+          
+        >
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-user-md" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Doctor Consultation</h3>
+          <p class="text-gray-600 text-sm sm:text-base flex-grow">
+            Online medical advice and diagnosis from healthcare professionals via telemedicine.
+          </p>
+        </div>
+        <div
+          tabindex="0"
+          role="button"
+          aria-label="Personal Coaches card"
+          class="interactive-card bg-white rounded-lg p-6 shadow flex flex-col"
+          onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
+          
+        >
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Personal Coaches</h3>
+          <p class="text-gray-600 text-sm sm:text-base flex-grow">
+            Experts who guide and motivate you to reach your personal and professional goals.
+          </p>
+        </div>
+        <div
+          tabindex="0"
+          role="button"
+          aria-label="Community Support card"
+          class="interactive-card bg-white rounded-lg p-6 shadow flex flex-col"
+          onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
+         
+        >
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-users" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Community Support</h3>
+          <p class="text-gray-600 text-sm sm:text-base flex-grow">
+            Connect with peers for encouragement, advice, and shared learning experiences.
+          </p>
+        </div>
+        <div
+          tabindex="0"
+          role="button"
+          aria-label="Challenges card"
+          class="interactive-card bg-white rounded-lg p-6 shadow flex flex-col"
+          onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
+          
+        >
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-flag-checkered" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Challenges</h3>
+          <p class="text-gray-600 text-sm sm:text-base flex-grow">
+            Engage in fun and motivating challenges to practice and improve your speaking skills.
+          </p>
+        </div>
+        <div
+          tabindex="0"
+          role="button"
+          aria-label="Breathing Exercise card"
+          class="interactive-card bg-white rounded-lg p-6 shadow flex flex-col"
+          onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
+         
+        >
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-lungs" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Breathing Exercise</h3>
+          <p class="text-gray-600 text-sm sm:text-base flex-grow">
+            Exercises designed to improve breath control and reduce speaking anxiety.
+          </p>
+        </div>
+        <div
+          tabindex="0"
+          role="button"
+          aria-label="Articulation Exercise card"
+          class="interactive-card bg-white rounded-lg p-6 shadow flex flex-col"
+          onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
+          
+        >
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-comments" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Articulation Exercise</h3>
+          <p class="text-gray-600 text-sm sm:text-base flex-grow">
+            Practice exercises to enhance clarity and pronunciation in your speech.
+          </p>
+        </div>
+        <div
+          tabindex="0"
+          role="button"
+          aria-label="Role-Play Scenarios card"
+          class="interactive-card bg-white rounded-lg p-6 shadow flex flex-col"
+          onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
+          
+        >
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-theater-masks" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Role-Play Scenarios</h3>
+          <p class="text-gray-600 text-sm sm:text-base flex-grow">
+            Practice real-life conversations in simulated scenarios to build confidence and fluency.
+          </p>
+        </div>
+        <div
+          tabindex="0"
+          role="button"
+          aria-label="Mirror Talk Mode card"
+          class="interactive-card bg-white rounded-lg p-6 shadow flex flex-col"
+          onkeydown="if(event.key==='Enter' || event.key===' ') this.click()"
+          
+        >
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-magic" aria-hidden="true"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Mirror Talk Mode</h3>
+          <p class="text-gray-600 text-sm sm:text-base flex-grow">
+            Practice speaking by observing yourself in a mirror to improve expression and confidence.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-100 shadow mt-auto">
+    <div
+      class="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center text-gray-900 text-sm sm:text-base select-none"
+    >
+      <div>© 2024 FluentSpeech. All rights reserved.</div>
+      <div class="space-x-6 mt-4 sm:mt-0">
+        <a href="#" class="hover:text-blue-600 transition-colors duration-300">Privacy Policy</a>
+        <a href="#" class="hover:text-blue-600 transition-colors duration-300">Terms of Service</a>
+        <a href="#" class="hover:text-blue-600 transition-colors duration-300">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  
+  </script>
+</body>
+</html>

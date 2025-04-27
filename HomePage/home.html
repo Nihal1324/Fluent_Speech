@@ -1,22 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Fluent Speech : Home
+  </title>
+  
+  <link rel="stylesheet" href="home.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <link rel="icon" href="assets/logo2.png" />
 
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     
-    <!-- Favicon & Styles -->
-    <link rel="stylesheet" href="home.css" />
-    <link rel="icon" href="/WelcomePage/assets/logo2.png" />
+ </head>
+ <body class="bg-[#e8f0fe]">
+  <header class="bg-sky-100 border-b border-gray-200 shadow-sm sticky top-0 z-30">
+   <nav class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between h-16">
+    <a class="flex items-center space-x-2" href="#" aria-label="Fluent Speech Home">
+     <div >
+        <img src="assets/logo3.svg" alt="Fluent Speech Logo"  />
 
-</head>
-<body>
-    
-</body>
+      </i>
+     </div>
+     <span class="font-semibold text-gray-900 text-2xl select-none">
+      Fluent Speech
+     </span>
+    </a>
+    <ul class="hidden md:flex space-x-8 text-gray-700 text-sm font-normal">
+     <li>
+      <a class="hover:text-gray-900" href="/featuresPage/features.html" tabindex="0">
+       Features
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-gray-900" href="/How_It_Works/info.html" tabindex="0">
+       How it Works
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-gray-900" href="/CoursesPage/course.html" tabindex="0">
+       Courses
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-gray-900" href="/UserFeedback/feedback.html" tabindex="0">
+       Success Stories
+      </a>
+     </li>
+    </ul>
+    <div class="hidden md:flex items-center space-x-4 text-sm font-normal text-gray-700">
+     <a class="hover:text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563eb]" href="/loginPage/login.html" tabindex="0">
+      Login
+     </a>
+     <a class="bg-[#2563eb] btn-shadow hover:bg-[#1e40af] text-white px-4 py-2 rounded text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" href="/community/joinCommunity.html" tabindex="0">
+      Join Community Now!
+     </a>
+    </div>
+   </nav>
+  </header>
+  <main class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 flex flex-col md:flex-row items-center md:items-center gap-12 md:gap-24">
+   <section class="max-w-xl flex flex-col space-y-8">
+    <h1 class="text-3xl sm:text-5xl font-extrabold text-gray-900 leading-tight select-text drop-shadow-sm">
+     Speak with Confidence,
+     <br/>
+     Transform Your Life
+    </h1>
+    <p class="text-gray-700 text-base sm:text-lg leading-relaxed tracking-wide">
+     Overcome speech challenges with Personalized Coaching, Real-time Analysis, and Expert support. Your journey to fluent speech starts here.
+    </p>
+    <div class="flex space-x-6">
+     <a aria-label="Start Free Trial" class="bg-[#2563eb] btn-shadow hover:bg-[#1e40af] text-white px-6 py-3 rounded-lg text-base font-semibold transition transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" href="/featuresPage/features.html" tabindex="0" role="button">
+      Get Started!
+     </a>
+     <a aria-label="Watch Demo" class="border border-[#2563eb] text-[#2563eb] hover:bg-[#e0e7ff] px-6 py-3 rounded-lg text-base font-semibold transition transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563eb]" href="/aboutUS/AboutUs.html" tabindex="0" role="button">
+    About Us!
+     </a>
+    </div>
+   </section>
+   <section class="flex-shrink-0 w-full max-w-lg rounded-xl overflow-hidden shadow-lg">
+    <img alt="Two women sitting on a couch in a modern office environment, smiling and looking at a tablet together" class="img-hover-scale w-full object-cover" height="400" loading="lazy" src="assets/logo7.png" width="600"/>
+   </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-sky-100 text-gray-700 py-6 mt-12 border-t border-sky-200">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <div class="text-sm text-center md:text-left">
+        &copy; 2025 Fluent Speech. All rights reserved.
+      </div>
+      <div class="mt-4 md:mt-0 flex space-x-4">
+        <a href="#" class="hover:text-black transition duration-300 text-sm">Privacy Policy</a>
+        <a href="#" class="hover:text-black transition duration-300 text-sm">Terms of Service</a>
+        <a href="/contact us/contact.html" class="hover:text-black transition duration-300 text-sm">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+ </body>
 </html>

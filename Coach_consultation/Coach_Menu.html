@@ -1,0 +1,628 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Expert Speech Therapist Consultation
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <link rel="icon" href="/HomePage/assets/logo2.png"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+   /* Animate card hover */
+   .therapist-card {
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     cursor: pointer;
+   }
+   .therapist-card:hover, .therapist-card:focus-within {
+     transform: translateY(-8px);
+     box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.4), 0 10px 10px -5px rgba(99, 102, 241, 0.2);
+     outline: none;
+   }
+   /* Pulse animation for book button */
+   .book-btn.pulse {
+     animation: pulse 2s infinite;
+   }
+   @keyframes pulse {
+     0%, 100% {
+       box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+     }
+     50% {
+       box-shadow: 0 0 10px 6px rgba(99, 102, 241, 0);
+     }
+   }
+   /* Smooth fade in/out for toast */
+   #toast-success {
+     transition: opacity 0.5s ease;
+   }
+  </style>
+ </head>
+ <body class="bg-gray-50 min-h-screen flex flex-col">
+  <header class="bg-white shadow">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-6">
+        <a class="flex items-center space-x-2 text-2xl font-bold text-indigo-600" href="#" tabindex="0" aria-label="Go to homepage SpeechCare">
+            <img src="/HomePage/assets/logo3.svg" alt="Fluent Speech Logo" class="h-10 w-10 object-contain" />
+            <span>Fluent Speech</span>
+          </a>
+          
+     <nav class="hidden md:flex space-x-8 text-gray-700 font-medium" role="navigation" aria-label="Primary Navigation">
+      <a class="hover:text-indigo-600 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/HomePage/home.html" tabindex="0">
+       Home
+      </a>
+      <a class="hover:text-indigo-600 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/aboutUS/AboutUs.html" tabindex="0">
+       About
+      </a>
+      <a class="hover:text-indigo-600 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/Coach_consultation/consultation_Page.html" tabindex="0" aria-current="page">
+       Consultation
+      </a>
+      <a class="hover:text-indigo-600 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/contact us/contact.html" tabindex="0">
+       Contact
+      </a>
+     </nav>
+     <div class="md:hidden">
+      <button aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" id="menu-btn" type="button">
+       <i class="fas fa-bars fa-lg" aria-hidden="true">
+       </i>
+      </button>
+     </div>
+    </div>
+   </div>
+   <nav class="hidden md:hidden bg-white border-t border-gray-200" id="mobile-menu" role="navigation" aria-label="Mobile Navigation">
+    <div class="px-4 py-4 space-y-1">
+     <a class="block text-gray-700 font-medium py-2 hover:bg-indigo-50 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600" href="/HomePage/home.html" tabindex="0">
+      Home
+     </a>
+     <a class="block text-gray-700 font-medium py-2 hover:bg-indigo-50 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600" href="/aboutUS/AboutUs.html" tabindex="0">
+      About
+     </a>
+     <a class="block text-gray-700 font-medium py-2 hover:bg-indigo-50 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600" href="/Coach_consultation/consultation_Page.html" tabindex="0" aria-current="page">
+      Consultation
+     </a>
+     <a class="block text-gray-700 font-medium py-2 hover:bg-indigo-50 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600" href="/contact us/contact.html" tabindex="0">
+      Contact
+     </a>
+    </div>
+   </nav>
+  </header>
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+   <h1 class="text-4xl font-extrabold text-gray-900 mb-6 text-center" tabindex="0">
+    Consult with Expert Speech Therapists
+   </h1>
+   <p class="max-w-3xl mx-auto text-center text-gray-600 mb-12" tabindex="0">
+    Connect with certified speech therapists specialized in various speech and language disorders. Choose your expert and book a consultation to start your journey towards better communication.
+   </p>
+   <section class="mb-10 max-w-md mx-auto" aria-label="Filter therapists by specialty">
+    <label class="block mb-2 font-semibold text-gray-700" for="filter-specialty">
+     Filter by Specialty
+    </label>
+    <select class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="filter-specialty" aria-describedby="filter-desc" aria-controls="therapist-list" aria-live="polite" aria-atomic="true">
+     <option value="all" selected>
+      All Specialties
+     </option>
+     <option value="Pediatric Speech Therapist">
+      Pediatric Speech Therapist
+     </option>
+     <option value="Adult Speech Therapist">
+      Adult Speech Therapist
+     </option>
+     <option value="Neurological Speech Therapist">
+      Neurological Speech Therapist
+     </option>
+     <option value="Fluency Specialist">
+      Fluency Specialist
+     </option>
+     <option value="Voice Therapist">
+      Voice Therapist
+     </option>
+     <option value="Language Development Specialist">
+      Language Development Specialist
+     </option>
+    </select>
+    <p class="sr-only" id="filter-desc">Select a specialty to filter the list of therapists below.</p>
+   </section>
+   <section class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3" id="therapist-list" aria-live="polite" aria-relevant="additions removals" aria-label="List of speech therapists">
+    <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col therapist-card" data-specialty="Pediatric Speech Therapist" tabindex="0" aria-label="Dr. Emily Watson, Pediatric Speech Therapist, rating 4.5 stars" role="group" aria-describedby="desc-emily">
+     <img alt="Portrait of Dr. Emily Watson, a female speech therapist with short brown hair, wearing a white coat and smiling warmly" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/0c213f34-90cd-48a1-00af-198a43f0c65b.jpg" width="400"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h2 class="text-xl font-semibold text-gray-900 mb-1" id="name-emily">
+       Dr. Emily Watson
+      </h2>
+      <p class="text-indigo-600 font-medium mb-2" id="desc-emily">
+       Pediatric Speech Therapist specializing in speech delay and articulation disorders in children. 10+ years of experience helping kids find their voice.
+      </p>
+      <p class="text-gray-700 flex-grow mb-4">
+       Compassionate and patient-focused approach to pediatric speech therapy.
+      </p>
+      <div class="flex items-center text-yellow-400 mb-4" aria-label="Rating 4.5 out of 5 stars">
+       <i class="fas fa-star mr-1" title="Star 1"></i>
+       <i class="fas fa-star mr-1" title="Star 2"></i>
+       <i class="fas fa-star mr-1" title="Star 3"></i>
+       <i class="fas fa-star mr-1" title="Star 4"></i>
+       <i class="fas fa-star-half-alt" title="Half star 5"></i>
+       <span class="ml-2 text-gray-600 text-sm">
+        (4.5)
+       </span>
+      </div>
+      <button aria-haspopup="dialog" aria-controls="modal-booking" aria-expanded="false" class="mt-auto bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded transition focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 book-btn pulse" type="button" data-name="Dr. Emily Watson" data-specialty="Pediatric Speech Therapist" aria-label="Book consultation with Dr. Emily Watson">
+       Book Consultation
+      </button>
+     </div>
+    </article>
+    <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col therapist-card" data-specialty="Adult Speech Therapist" tabindex="0" aria-label="Mr. James Lee, Adult Speech Therapist, rating 3.7 stars" role="group" aria-describedby="desc-james">
+     <img alt="Portrait of Mr. James Lee, a male speech therapist with black hair and glasses, wearing a blue shirt and smiling" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/fe375ceb-e068-4bb3-6386-d9937f747108.jpg" width="400"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h2 class="text-xl font-semibold text-gray-900 mb-1" id="name-james">
+       Mr. James Lee
+      </h2>
+      <p class="text-indigo-600 font-medium mb-2" id="desc-james">
+       Adult Speech Therapist expert in stuttering and voice therapy for adults. Dedicated to improving communication confidence and clarity.
+      </p>
+      <p class="text-gray-700 flex-grow mb-4">
+       Patient-centered therapy tailored to adult communication needs.
+      </p>
+      <div class="flex items-center text-yellow-400 mb-4" aria-label="Rating 3.7 out of 5 stars">
+       <i class="fas fa-star mr-1" title="Star 1"></i>
+       <i class="fas fa-star mr-1" title="Star 2"></i>
+       <i class="fas fa-star mr-1" title="Star 3"></i>
+       <i class="fas fa-star-half-alt mr-1" title="Half star 4"></i>
+       <i class="far fa-star" title="Empty star 5"></i>
+       <span class="ml-2 text-gray-600 text-sm">
+        (3.7)
+       </span>
+      </div>
+      <button aria-haspopup="dialog" aria-controls="modal-booking" aria-expanded="false" class="mt-auto bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded transition focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 book-btn" type="button" data-name="Mr. James Lee" data-specialty="Adult Speech Therapist" aria-label="Book consultation with Mr. James Lee">
+       Book Consultation
+      </button>
+     </div>
+    </article>
+    <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col therapist-card" data-specialty="Neurological Speech Therapist" tabindex="0" aria-label="Dr. Sophia Martinez, Neurological Speech Therapist, rating 4.0 stars" role="group" aria-describedby="desc-sophia">
+     <img alt="Portrait of Dr. Sophia Martinez, a female speech therapist with long dark hair, wearing a green blouse and glasses, smiling" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/43abc6e1-ee99-4b56-9585-6e53d9051b2a.jpg" width="400"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h2 class="text-xl font-semibold text-gray-900 mb-1" id="name-sophia">
+       Dr. Sophia Martinez
+      </h2>
+      <p class="text-indigo-600 font-medium mb-2" id="desc-sophia">
+       Neurological Speech Therapist focusing on speech rehabilitation for patients with neurological disorders such as stroke and Parkinson’s disease.
+      </p>
+      <p class="text-gray-700 flex-grow mb-4">
+       Skilled in neurogenic communication disorder therapies.
+      </p>
+      <div class="flex items-center text-yellow-400 mb-4" aria-label="Rating 4.0 out of 5 stars">
+       <i class="fas fa-star mr-1" title="Star 1"></i>
+       <i class="fas fa-star mr-1" title="Star 2"></i>
+       <i class="fas fa-star mr-1" title="Star 3"></i>
+       <i class="fas fa-star mr-1" title="Star 4"></i>
+       <i class="far fa-star" title="Empty star 5"></i>
+       <span class="ml-2 text-gray-600 text-sm">
+        (4.0)
+       </span>
+      </div>
+      <button aria-haspopup="dialog" aria-controls="modal-booking" aria-expanded="false" class="mt-auto bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded transition focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 book-btn" type="button" data-name="Dr. Sophia Martinez" data-specialty="Neurological Speech Therapist" aria-label="Book consultation with Dr. Sophia Martinez">
+       Book Consultation
+      </button>
+     </div>
+    </article>
+    <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col therapist-card" data-specialty="Fluency Specialist" tabindex="0" aria-label="Ms. Olivia Nguyen, Fluency Specialist, rating 2.5 stars" role="group" aria-describedby="desc-olivia">
+     <img alt="Portrait of Ms. Olivia Nguyen, a female speech therapist with shoulder-length black hair, wearing a red blouse and smiling" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/5d5e3cab-6904-4f63-48f8-3e8db76ab715.jpg" width="400"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h2 class="text-xl font-semibold text-gray-900 mb-1" id="name-olivia">
+       Ms. Olivia Nguyen
+      </h2>
+      <p class="text-indigo-600 font-medium mb-2" id="desc-olivia">
+       Fluency Specialist specializing in fluency disorders including stuttering and cluttering, with a compassionate and patient-centered approach.
+      </p>
+      <p class="text-gray-700 flex-grow mb-4">
+       Empathetic therapy for fluency challenges.
+      </p>
+      <div class="flex items-center text-yellow-400 mb-4" aria-label="Rating 2.5 out of 5 stars">
+       <i class="fas fa-star mr-1" title="Star 1"></i>
+       <i class="fas fa-star mr-1" title="Star 2"></i>
+       <i class="fas fa-star-half-alt mr-1" title="Half star 3"></i>
+       <i class="far fa-star mr-1" title="Empty star 4"></i>
+       <i class="far fa-star" title="Empty star 5"></i>
+       <span class="ml-2 text-gray-600 text-sm">
+        (2.5)
+       </span>
+      </div>
+      <button aria-haspopup="dialog" aria-controls="modal-booking" aria-expanded="false" class="mt-auto bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded transition focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 book-btn" type="button" data-name="Ms. Olivia Nguyen" data-specialty="Fluency Specialist" aria-label="Book consultation with Ms. Olivia Nguyen">
+       Book Consultation
+      </button>
+     </div>
+    </article>
+    <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col therapist-card" data-specialty="Voice Therapist" tabindex="0" aria-label="Dr. Michael Brown, Voice Therapist, rating 3.8 stars" role="group" aria-describedby="desc-michael">
+     <img alt="Portrait of Dr. Michael Brown, a male speech therapist with short gray hair and beard, wearing a black shirt and smiling" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/adf1c255-ef24-451c-99b7-12d2b61efcf5.jpg" width="400"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h2 class="text-xl font-semibold text-gray-900 mb-1" id="name-michael">
+       Dr. Michael Brown
+      </h2>
+      <p class="text-indigo-600 font-medium mb-2" id="desc-michael">
+       Voice Therapist experienced in voice disorders and rehabilitation for professional voice users including singers and speakers.
+      </p>
+      <p class="text-gray-700 flex-grow mb-4">
+       Specialized voice therapy for professionals.
+      </p>
+      <div class="flex items-center text-yellow-400 mb-4" aria-label="Rating 3.8 out of 5 stars">
+       <i class="fas fa-star mr-1" title="Star 1"></i>
+       <i class="fas fa-star mr-1" title="Star 2"></i>
+       <i class="fas fa-star mr-1" title="Star 3"></i>
+       <i class="fas fa-star-half-alt mr-1" title="Half star 4"></i>
+       <i class="far fa-star" title="Empty star 5"></i>
+       <span class="ml-2 text-gray-600 text-sm">
+        (3.8)
+       </span>
+      </div>
+      <button aria-haspopup="dialog" aria-controls="modal-booking" aria-expanded="false" class="mt-auto bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded transition focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 book-btn" type="button" data-name="Dr. Michael Brown" data-specialty="Voice Therapist" aria-label="Book consultation with Dr. Michael Brown">
+       Book Consultation
+      </button>
+     </div>
+    </article>
+    <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col therapist-card" data-specialty="Language Development Specialist" tabindex="0" aria-label="Ms. Aisha Khan, Language Development Specialist, rating 5 stars" role="group" aria-describedby="desc-aisha">
+     <img alt="Portrait of Ms. Aisha Khan, a female speech therapist with curly black hair, wearing a yellow top and smiling" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/7e9b8701-190e-457d-a4d9-76c814235f2f.jpg" width="400"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h2 class="text-xl font-semibold text-gray-900 mb-1" id="name-aisha">
+       Ms. Aisha Khan
+      </h2>
+      <p class="text-indigo-600 font-medium mb-2" id="desc-aisha">
+       Language Development Specialist focused on early language development and intervention for toddlers and preschoolers with speech delays.
+      </p>
+      <p class="text-gray-700 flex-grow mb-4">
+       Early intervention expert for toddlers and preschoolers.
+      </p>
+      <div class="flex items-center text-yellow-400 mb-4" aria-label="Rating 5 out of 5 stars">
+       <i class="fas fa-star mr-1" title="Star 1"></i>
+       <i class="fas fa-star mr-1" title="Star 2"></i>
+       <i class="fas fa-star mr-1" title="Star 3"></i>
+       <i class="fas fa-star mr-1" title="Star 4"></i>
+       <i class="fas fa-star mr-1" title="Star 5"></i>
+       <span class="ml-2 text-gray-600 text-sm">
+        (5.0)
+       </span>
+      </div>
+      <button aria-haspopup="dialog" aria-controls="modal-booking" aria-expanded="false" class="mt-auto bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded transition focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 book-btn" type="button" data-name="Ms. Aisha Khan" data-specialty="Language Development Specialist" aria-label="Book consultation with Ms. Aisha Khan">
+       Book Consultation
+      </button>
+     </div>
+    </article>
+   </section>
+  </main>
+  <footer class="bg-white border-t border-gray-200 py-8 mt-12">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 text-sm" tabindex="0">
+    © 2024 SpeechCare. All rights reserved.
+   </div>
+  </footer>
+
+  <!-- Modal -->
+  <div aria-hidden="true" aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden" id="modal-booking" role="dialog" aria-live="assertive" aria-describedby="modal-desc">
+   <div class="bg-white rounded-lg shadow-xl max-w-lg w-full mx-4 sm:mx-0">
+    <div class="flex justify-between items-center border-b border-gray-200 px-6 py-4">
+     <h3 class="text-lg font-semibold text-gray-900" id="modal-title" tabindex="0">
+      Book Consultation
+     </h3>
+     <button aria-label="Close modal" class="text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded" id="modal-close-btn" type="button">
+      <i class="fas fa-times fa-lg" aria-hidden="true">
+      </i>
+     </button>
+    </div>
+    <form class="px-6 py-6 space-y-6" id="booking-form" novalidate>
+     <p class="text-gray-700" id="modal-desc" tabindex="0">
+      <!-- Therapist name and specialty inserted here -->
+     </p>
+     <div>
+      <label class="block mb-1 font-medium text-gray-700" for="name">
+       Your Full Name
+      </label>
+      <input aria-required="true" aria-describedby="name-error" class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="name" name="name" placeholder="John Doe" required="" type="text"/>
+      <p class="mt-1 text-red-600 text-sm hidden" id="name-error" role="alert">
+       Please enter your name.
+      </p>
+     </div>
+     <div>
+      <label class="block mb-1 font-medium text-gray-700" for="email">
+       Email Address
+      </label>
+      <input aria-required="true" aria-describedby="email-error" class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="email" name="email" placeholder="john@example.com" required="" type="email"/>
+      <p class="mt-1 text-red-600 text-sm hidden" id="email-error" role="alert">
+       Please enter a valid email address.
+      </p>
+     </div>
+     <div>
+      <label class="block mb-1 font-medium text-gray-700" for="date">
+       Preferred Date
+      </label>
+      <input aria-required="true" aria-describedby="date-error" class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="date" name="date" required="" type="date" min="2024-06-01"/>
+      <p class="mt-1 text-red-600 text-sm hidden" id="date-error" role="alert">
+       Please select a valid date.
+      </p>
+     </div>
+     <div>
+      <label class="block mb-1 font-medium text-gray-700" for="time">
+       Preferred Time
+      </label>
+      <select aria-required="true" aria-describedby="time-error" class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="time" name="time" required="">
+       <option disabled="" selected="" value="">
+        Select a time
+       </option>
+       <option value="09:00 AM">
+        09:00 AM
+       </option>
+       <option value="10:00 AM">
+        10:00 AM
+       </option>
+       <option value="11:00 AM">
+        11:00 AM
+       </option>
+       <option value="01:00 PM">
+        01:00 PM
+       </option>
+       <option value="02:00 PM">
+        02:00 PM
+       </option>
+       <option value="03:00 PM">
+        03:00 PM
+       </option>
+       <option value="04:00 PM">
+        04:00 PM
+       </option>
+      </select>
+      <p class="mt-1 text-red-600 text-sm hidden" id="time-error" role="alert">
+       Please select a time.
+      </p>
+     </div>
+     <div>
+      <label class="block mb-1 font-medium text-gray-700" for="notes">
+       Additional Notes (optional)
+      </label>
+      <textarea class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="notes" name="notes" placeholder="Any specific concerns or questions?"></textarea>
+     </div>
+     <div class="flex justify-end space-x-4">
+      <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1" id="modal-cancel-btn" type="button">
+       Cancel
+      </button>
+      <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1" type="submit">
+       Confirm Booking
+      </button>
+     </div>
+    </form>
+   </div>
+  </div>
+
+  <!-- Success Toast -->
+  <div aria-live="assertive" class="fixed bottom-6 right-6 z-50 hidden" id="toast-success" role="alert" tabindex="0">
+   <div class="bg-green-600 text-white px-6 py-4 rounded shadow-lg flex items-center space-x-3">
+    <i class="fas fa-check-circle fa-lg" aria-hidden="true">
+    </i>
+    <p>
+     Your consultation has been booked successfully!
+    </p>
+    <button aria-label="Close notification" class="ml-auto focus:outline-none focus:ring-2 focus:ring-white rounded" id="toast-close-btn" type="button">
+     <i class="fas fa-times" aria-hidden="true">
+     </i>
+    </button>
+   </div>
+  </div>
+
+  <script>
+   // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Filter therapists by specialty
+    const filterSelect = document.getElementById('filter-specialty');
+    const therapistCards = Array.from(document.querySelectorAll('.therapist-card'));
+
+    filterSelect.addEventListener('change', () => {
+      const selected = filterSelect.value;
+      therapistCards.forEach(card => {
+        if (selected === 'all' || card.dataset.specialty === selected) {
+          card.classList.remove('hidden');
+          card.setAttribute('tabindex', '0');
+          card.querySelector('.book-btn').classList.add('pulse');
+        } else {
+          card.classList.add('hidden');
+          card.setAttribute('tabindex', '-1');
+          card.querySelector('.book-btn').classList.remove('pulse');
+        }
+      });
+    });
+
+    // Modal elements
+    const modal = document.getElementById('modal-booking');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const modalCancelBtn = document.getElementById('modal-cancel-btn');
+    const therapistInfo = document.getElementById('modal-desc');
+    const bookingForm = document.getElementById('booking-form');
+    const bookButtons = document.querySelectorAll('.book-btn');
+    let activeButton = null;
+
+    // Toast elements
+    const toast = document.getElementById('toast-success');
+    const toastCloseBtn = document.getElementById('toast-close-btn');
+
+    // Open modal and populate therapist info
+    bookButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        activeButton = button;
+        const name = button.dataset.name;
+        const specialty = button.dataset.specialty;
+        therapistInfo.textContent = `Booking a consultation with ${name} (${specialty}). Please fill in your details below.`;
+        modal.classList.remove('hidden');
+        modal.setAttribute('aria-hidden', 'false');
+        button.setAttribute('aria-expanded', 'true');
+        // Reset form
+        bookingForm.reset();
+        clearErrors();
+        // Set min date to today
+        const dateInput = bookingForm.querySelector('#date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+        // Focus first input
+        bookingForm.querySelector('#name').focus();
+        trapFocus(modal);
+      });
+    });
+
+    // Close modal function
+    function closeModal() {
+      modal.classList.add('hidden');
+      modal.setAttribute('aria-hidden', 'true');
+      if (activeButton) {
+        activeButton.setAttribute('aria-expanded', 'false');
+        activeButton.focus();
+        activeButton = null;
+      }
+      releaseFocus();
+    }
+
+    modalCloseBtn.addEventListener('click', closeModal);
+    modalCancelBtn.addEventListener('click', closeModal);
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        e.preventDefault();
+        closeModal();
+      }
+    });
+
+    // Form validation helpers
+    function showError(input, errorId) {
+      const errorEl = document.getElementById(errorId);
+      errorEl.classList.remove('hidden');
+      input.setAttribute('aria-invalid', 'true');
+    }
+    function hideError(input, errorId) {
+      const errorEl = document.getElementById(errorId);
+      errorEl.classList.add('hidden');
+      input.removeAttribute('aria-invalid');
+    }
+    function clearErrors() {
+      ['name', 'email', 'date', 'time'].forEach(field => {
+        hideError(bookingForm.querySelector(`#${field}`), `${field}-error`);
+      });
+    }
+
+    // Email validation regex
+    function isValidEmail(email) {
+      // Simple email regex
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // Form submission
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      clearErrors();
+      let valid = true;
+
+      const nameInput = bookingForm.querySelector('#name');
+      const emailInput = bookingForm.querySelector('#email');
+      const dateInput = bookingForm.querySelector('#date');
+      const timeInput = bookingForm.querySelector('#time');
+
+      if (!nameInput.value.trim()) {
+        showError(nameInput, 'name-error');
+        valid = false;
+      }
+      if (!emailInput.value.trim() || !isValidEmail(emailInput.value.trim())) {
+        showError(emailInput, 'email-error');
+        valid = false;
+      }
+      if (!dateInput.value) {
+        showError(dateInput, 'date-error');
+        valid = false;
+      } else {
+        const selectedDate = new Date(dateInput.value);
+        const today = new Date();
+        today.setHours(0,0,0,0);
+        if (selectedDate < today) {
+          showError(dateInput, 'date-error');
+          valid = false;
+        }
+      }
+      if (!timeInput.value) {
+        showError(timeInput, 'time-error');
+        valid = false;
+      }
+
+      if (!valid) {
+        return;
+      }
+
+      // Simulate booking process with loading spinner on button
+      const submitBtn = bookingForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<svg class="animate-spin h-5 w-5 mr-2 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>Booking...`;
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Confirm Booking';
+        closeModal();
+        showToast();
+      }, 2000);
+    });
+
+    // Toast functions
+    function showToast() {
+      toast.classList.remove('hidden');
+      toast.style.opacity = '1';
+      toast.focus();
+      setTimeout(() => {
+        fadeOutToast();
+      }, 5000);
+    }
+    function fadeOutToast() {
+      toast.style.opacity = '0';
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 500);
+    }
+    toastCloseBtn.addEventListener('click', () => {
+      fadeOutToast();
+    });
+
+    // Focus trap for modal
+    let focusableElementsString = 'a[href], area[href], input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+    let firstTabStop = null;
+    let lastTabStop = null;
+
+    function trapFocus(element) {
+      const focusableElements = element.querySelectorAll(focusableElementsString);
+      if (focusableElements.length === 0) return;
+      firstTabStop = focusableElements[0];
+      lastTabStop = focusableElements[focusableElements.length - 1];
+      element.addEventListener('keydown', trapTabKey);
+    }
+
+    function trapTabKey(e) {
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          if (document.activeElement === firstTabStop) {
+            e.preventDefault();
+            lastTabStop.focus();
+          }
+        } else {
+          if (document.activeElement === lastTabStop) {
+            e.preventDefault();
+            firstTabStop.focus();
+          }
+        }
+      }
+    }
+
+    function releaseFocus() {
+      modal.removeEventListener('keydown', trapTabKey);
+    }
+  </script>
+ </body>
+</html>

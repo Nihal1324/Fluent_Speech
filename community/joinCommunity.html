@@ -1,0 +1,184 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Supportive Community</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    /* Button focus ring for accessibility */
+    button:focus-visible {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+    }
+  </style>
+  <link rel="icon" href="/featuresPage/assets/logo2.png" />
+</head>
+<body class="bg-sky-200 font-sans flex flex-col min-h-screen">
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur-md shadow sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="text-2xl font-bold text-blue-600 cursor-pointer select-none" tabindex="0" role="button" aria-label="Supportive Community Home">
+        Supportive Community
+      </div>
+      <nav class="space-x-6 text-gray-700 font-medium text-sm sm:text-base" aria-label="Primary Navigation">
+        <a href="/HomePage/home.html" class="hover:text-blue-600 transition focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Home</a>
+        <a href="#" class="hover:text-blue-600 transition focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">About</a>
+        <a href="#" class="hover:text-blue-600 transition focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Events</a>
+        <a href="#" class="hover:text-blue-600 transition focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex-grow">
+    <section class="max-w-7xl mx-auto px-6 py-16" aria-labelledby="community-heading">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <h2 id="community-heading" class="text-xl sm:text-2xl font-semibold text-gray-900">
+          Join Our Supportive Community
+        </h2>
+        <p class="mt-2 text-gray-600 text-sm sm:text-base">
+          Connect, practice, and grow with fellow learners
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-8 flex flex-col justify-between cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-400 transition transform hover:scale-[1.03] hover:shadow-xl"
+          tabindex="0"
+          role="region"
+          aria-labelledby="card1-title"
+          aria-describedby="card1-desc"
+          onkeydown="if(event.key==='Enter' || event.key===' ') { document.getElementById('btn1').click(); event.preventDefault(); }"
+        >
+          <div>
+            <div class="w-12 h-12 rounded-full bg-blue-200 flex items-center justify-center mb-6">
+              <i class="fas fa-users text-blue-600 text-lg" aria-hidden="true"></i>
+            </div>
+            <h3 id="card1-title" class="font-semibold text-gray-900 text-lg mb-3">Regular Meets</h3>
+            <p id="card1-desc" class="text-gray-600 text-sm mb-6 leading-relaxed">
+              Join weekly virtual meetups with community members for group practice and mutual support.
+            </p>
+            <ul class="space-y-3 text-gray-700 text-sm mb-6">
+              <li class="flex items-center gap-3">
+                <i class="far fa-calendar-alt text-blue-600"></i>
+                Weekly Sessions
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fas fa-globe text-blue-600"></i>
+                Global Community
+              </li>
+            </ul>
+          </div>
+          <button
+            id="btn1"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition focus:outline-none focus:ring-4 focus:ring-blue-400"
+            type="button"
+            aria-label="Join Next Meet"
+            onclick="alert('You have joined the next meet!')"
+          >
+            Join Next Meet
+          </button>
+        </div>
+        <!-- Card 2 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-8 flex flex-col justify-between cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-400 transition transform hover:scale-[1.03] hover:shadow-xl"
+          tabindex="0"
+          role="region"
+          aria-labelledby="card2-title"
+          aria-describedby="card2-desc"
+          onkeydown="if(event.key==='Enter' || event.key===' ') { document.getElementById('btn2').click(); event.preventDefault(); }"
+        >
+          <div>
+            <div class="w-12 h-12 rounded-full bg-blue-200 flex items-center justify-center mb-6">
+              <i class="fas fa-door-open text-blue-600 text-lg" aria-hidden="true"></i>
+            </div>
+            <h3 id="card2-title" class="font-semibold text-gray-900 text-lg mb-3">
+              Community Practice Rooms
+            </h3>
+            <p id="card2-desc" class="text-gray-600 text-sm mb-6 leading-relaxed">
+              Enter virtual practice rooms focused on different speech improvement areas.
+            </p>
+            <div class="flex justify-between items-center mb-3 text-gray-700 text-sm">
+              <span>Pronunciation Room</span>
+              <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full select-none" aria-label="12 active users in Pronunciation Room">
+                12 Active
+              </span>
+            </div>
+            <div class="flex justify-between items-center mb-6 text-gray-700 text-sm">
+              <span>Fluency Room</span>
+              <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full select-none" aria-label="8 active users in Fluency Room">
+                8 Active
+              </span>
+            </div>
+          </div>
+          <button
+            id="btn2"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition focus:outline-none focus:ring-4 focus:ring-blue-400"
+            type="button"
+            aria-label="Enter Rooms"
+            onclick="alert('Entering practice rooms...')"
+          >
+            Enter Rooms
+          </button>
+        </div>
+        <!-- Card 3 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-8 flex flex-col justify-between cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-400 transition transform hover:scale-[1.03] hover:shadow-xl"
+          tabindex="0"
+          role="region"
+          aria-labelledby="card3-title"
+          aria-describedby="card3-desc"
+          onkeydown="if(event.key==='Enter' || event.key===' ') { document.getElementById('btn3').click(); event.preventDefault(); }"
+        >
+          <div>
+            <div class="w-12 h-12 rounded-full bg-blue-200 flex items-center justify-center mb-6">
+              <i class="fas fa-trophy text-blue-600 text-lg" aria-hidden="true"></i>
+            </div>
+            <h3 id="card3-title" class="font-semibold text-gray-900 text-lg mb-3">
+              Speech Challenge Tournaments
+            </h3>
+            <p id="card3-desc" class="text-gray-600 text-sm mb-6 leading-relaxed">
+              Participate in friendly competitions to challenge yourself and win rewards.
+            </p>
+            <ul class="space-y-3 text-gray-700 text-sm mb-6">
+              <li class="flex items-center gap-3">
+                <i class="fas fa-star text-blue-600"></i>
+                Weekly Challenges
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fas fa-gift text-blue-600"></i>
+                Win Premium Access
+              </li>
+            </ul>
+          </div>
+          <button
+            id="btn3"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition focus:outline-none focus:ring-4 focus:ring-blue-400"
+            type="button"
+            aria-label="Join Tournament"
+            onclick="alert('You joined the tournament! Good luck!')"
+          >
+            Join Tournament
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white/90 backdrop-blur-md border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row justify-between items-center text-gray-600 text-sm">
+      <p class="mb-4 sm:mb-0">&copy; 2024 Supportive Community. All rights reserved.</p>
+      <div class="space-x-6">
+        <a href="#" class="hover:text-blue-600 transition focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Privacy Policy</a>
+        <a href="#" class="hover:text-blue-600 transition focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Terms of Service</a>
+        <a href="#" class="hover:text-blue-600 transition focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

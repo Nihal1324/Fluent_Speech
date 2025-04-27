@@ -1,0 +1,690 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Fluent Speech - User Page
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="icon" href="/featuresPage/assets/logo2.png" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-sky-200 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img alt="Fluent Speech logo, stylized FS letters in blue and white" class="w-12 h-12 rounded-full"
+                    height="48" src="/HomePage/assets/logo3.svg" width="48" />
+                <h1 class="text-2xl font-semibold text-blue-600 cursor-pointer select-none" id="logo">
+                    Fluent Speech
+                </h1>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                <a class="hover:text-blue-600 transition" href="/HomePage/home.html" tabindex="0">
+                    Home
+                </a>
+                <a class="hover:text-blue-600 transition" href="#" tabindex="0">
+                    Courses
+                </a>
+                <a class="hover:text-blue-600 transition" href="/community/joinCommunity.html" tabindex="0">
+                    Community
+                </a>
+                <a class="hover:text-blue-600 transition" href="#" tabindex="0">
+                    About
+                </a>
+                <a class="hover:text-blue-600 transition" href="/contact us/contact.html" tabindex="0">
+                    Contact
+                </a>
+            </nav>
+            <div class="hidden md:flex items-center space-x-4">
+                <button aria-label="Notifications"
+                    class="relative text-gray-700 hover:text-blue-600 transition focus:outline-none" id="notif-btn"
+                    tabindex="0">
+                    <i class="fas fa-bell fa-lg">
+                    </i>
+                    <span
+                        class="absolute -top-1 -right-1 inline-block bg-red-600 text-white text-xs font-semibold rounded-full px-1.5 py-0.5 animate-pulse"
+                        id="notif-count">
+                        3
+                    </span>
+                </button>
+                <div class="relative" id="user-menu-container">
+                    <button aria-expanded="false" aria-haspopup="true"
+                        class="flex items-center space-x-2 focus:outline-none" id="user-menu-button" tabindex="0">
+                        <img alt="User profile picture, smiling young woman with dark hair"
+                            class="w-10 h-10 rounded-full object-cover" height="40"
+                            src="https://storage.googleapis.com/a1aa/image/8e84fcf4-0f9b-4918-df10-3f1ffecd1b1e.jpg"
+                            width="40" />
+                        <span class="text-gray-700 font-semibold select-none">
+                            Jane Doe
+                        </span>
+                        <i class="fas fa-chevron-down text-gray-500 transition-transform duration-200"
+                            id="user-menu-icon">
+                        </i>
+                    </button>
+                    <div aria-label="User dropdown menu"
+                        class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-20"
+                        id="user-dropdown" role="menu" tabindex="-1">
+                        <a class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-700 cursor-pointer"
+                            href="#" role="menuitem" tabindex="0" id="profile-link">
+                            Profile
+                        </a>
+                        <a class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-700 cursor-pointer"
+                            href="#" role="menuitem" tabindex="0" id="settings-link">
+                            Settings
+                        </a>
+                        <button
+                            class="w-full text-left px-4 py-2 text-red-600 hover:bg-red-100 hover:text-red-700 cursor-pointer"
+                            id="logout-btn" role="menuitem" tabindex="0">
+                            Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button aria-label="Open menu" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none"
+                id="mobile-menu-button" tabindex="0">
+                <i class="fas fa-bars fa-lg">
+                </i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <nav aria-label="Mobile menu" class="hidden md:hidden bg-white border-t border-gray-200" id="mobile-menu">
+            <a class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium"
+                href="/HomePage/home.html" tabindex="0">
+                Home
+            </a>
+            <a class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium" href="#"
+                tabindex="0">
+                Courses
+            </a>
+            <a class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium"
+                href="/community/joinCommunity.html" tabindex="0">
+                Community
+            </a>
+            <a class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium" href="#"
+                tabindex="0">
+                About
+            </a>
+            <a class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium"
+                href="/contact us/contact.html" tabindex="0">
+                Contact
+            </a>
+            <div class="border-t border-gray-200">
+            </div>
+            <a class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium flex items-center space-x-3"
+                href="#" tabindex="0">
+                <img alt="User profile picture, smiling young woman with dark hair"
+                    class="w-10 h-10 rounded-full object-cover" height="40"
+                    src="https://storage.googleapis.com/a1aa/image/8e84fcf4-0f9b-4918-df10-3f1ffecd1b1e.jpg"
+                    width="40" />
+                <span>
+                    Jane Doe
+                </span>
+            </a>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <div class="max-w-5xl mx-auto bg-white rounded-lg shadow-md p-6 md:p-10">
+            <div class="flex flex-col md:flex-row md:space-x-10">
+                <!-- Profile Sidebar -->
+                <aside class="md:w-1/3 mb-8 md:mb-0">
+                    <div class="flex flex-col items-center text-center space-y-4">
+                        <img alt="User profile picture, smiling young woman with dark hair, wearing casual clothes, bright background"
+                            class="w-40 h-40 rounded-full object-cover border-4 border-blue-500 cursor-pointer transition-transform hover:scale-105"
+                            height="160" id="profile-pic"
+                            src="https://storage.googleapis.com/a1aa/image/3e6de8d9-fcbc-4157-f689-50cd3ff675de.jpg"
+                            width="160" />
+                        <h2 class="text-2xl font-semibold text-gray-800 select-text">
+                            Jane Doe
+                        </h2>
+                        <p class="text-gray-600 select-text">
+                            jane.doe@example.com
+                        </p>
+                        <button
+                            class="mt-2 px-5 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition focus:outline-none"
+                            id="edit-profile-btn" tabindex="0">
+                            Edit Profile
+                        </button>
+                    </div>
+                    <div class="mt-10 bg-blue-50 rounded-lg p-5">
+                        <h3 class="text-lg font-semibold text-blue-700 mb-3">
+                            Account Info
+                        </h3>
+                        <ul class="text-gray-700 space-y-2">
+                            <li>
+                                <span class="font-semibold">
+                                    Member since:
+                                </span>
+                                January 2022
+                            </li>
+                            <li>
+                                <span class="font-semibold">
+                                    Subscription:
+                                </span>
+                                Premium Plan
+                            </li>
+                            <li>
+                                <span class="font-semibold">
+                                    Language Level:
+                                </span>
+                                Intermediate
+                            </li>
+                            <li>
+                                <span class="font-semibold">
+                                    Preferred Language:
+                                </span>
+                                English
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                <!-- Profile Main Content -->
+                <section class="md:w-2/3 space-y-10">
+                    <!-- Progress Section -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                            Learning Progress
+                        </h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700 font-medium">
+                                        Pronunciation Basics
+                                    </span>
+                                    <span class="text-gray-600 text-sm">
+                                        75%
+                                    </span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 cursor-pointer" role="progressbar"
+                                    aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" tabindex="0"
+                                    id="progress-pronunciation" title="Click to update progress">
+                                    <div class="bg-blue-600 h-4 rounded-full transition-all duration-500 w-[70%]">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700 font-medium">
+                                        Conversational Fluency
+                                    </span>
+                                    <span class="text-gray-600 text-sm">
+                                        40%
+                                    </span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 cursor-pointer" role="progressbar"
+                                    aria-valuemin="0" aria-valuemax="100" aria-valuenow="40" tabindex="0"
+                                    id="progress-conversational" title="Click to update progress">
+                                    <div class="bg-blue-600 h-4 rounded-full transition-all duration-500 w-[40%]">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700 font-medium">
+                                        Advanced Grammar
+                                    </span>
+                                    <span class="text-gray-600 text-sm">
+                                        20%
+                                    </span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 cursor-pointer" role="progressbar"
+                                    aria-valuemin="0" aria-valuemax="100" aria-valuenow="20" tabindex="0"
+                                    id="progress-grammar" title="Click to update progress">
+                                    <div class="bg-blue-600 h-4 rounded-full transition-all duration-500 w-[20%]">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Recent Activity -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                            Recent Activity
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center space-x-4 bg-gray-50 p-4 rounded-lg shadow-sm hover:bg-blue-50 cursor-pointer transition"
+                                tabindex="0" role="button" aria-pressed="false"
+                                data-activity="Completed Lesson: Pronunciation Basics on March 15, 2024">
+                                <img alt="Lesson 1 thumbnail, a microphone icon with sound waves on blue background"
+                                    class="w-16 h-16 rounded-md object-cover" height="64"
+                                    src="https://storage.googleapis.com/a1aa/image/6c0d0135-e629-4a9d-1eec-bff950d5df99.jpg"
+                                    width="64" />
+                                <div class="flex-1">
+                                    <p class="font-semibold text-gray-700">
+                                        Completed Lesson: Pronunciation Basics
+                                    </p>
+                                    <p class="text-gray-500 text-sm">
+                                        March 15, 2024
+                                    </p>
+                                </div>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">
+                                    Completed
+                                </span>
+                            </li>
+                            <li class="flex items-center space-x-4 bg-gray-50 p-4 rounded-lg shadow-sm hover:bg-blue-50 cursor-pointer transition"
+                                tabindex="0" role="button" aria-pressed="false"
+                                data-activity="Passed Quiz: Conversational Fluency on March 10, 2024">
+                                <img alt="Quiz 2 thumbnail, a clipboard with check marks on green background"
+                                    class="w-16 h-16 rounded-md object-cover" height="64"
+                                    src="https://storage.googleapis.com/a1aa/image/4181c66d-02f5-4827-0fda-6dadd02e3c2d.jpg"
+                                    width="64" />
+                                <div class="flex-1">
+                                    <p class="font-semibold text-gray-700">
+                                        Passed Quiz: Conversational Fluency
+                                    </p>
+                                    <p class="text-gray-500 text-sm">
+                                        March 10, 2024
+                                    </p>
+                                </div>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">
+                                    Passed
+                                </span>
+                            </li>
+                            <li class="flex items-center space-x-4 bg-gray-50 p-4 rounded-lg shadow-sm hover:bg-blue-50 cursor-pointer transition"
+                                tabindex="0" role="button" aria-pressed="false"
+                                data-activity="Posted in Community Forum on March 8, 2024">
+                                <img alt="Forum icon thumbnail, speech bubbles on orange background"
+                                    class="w-16 h-16 rounded-md object-cover" height="64"
+                                    src="https://storage.googleapis.com/a1aa/image/9561ce1d-667c-4f21-8149-51690fd2b389.jpg"
+                                    width="64" />
+                                <div class="flex-1">
+                                    <p class="font-semibold text-gray-700">
+                                        Posted in Community Forum
+                                    </p>
+                                    <p class="text-gray-500 text-sm">
+                                        March 8, 2024
+                                    </p>
+                                </div>
+                                <span
+                                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">
+                                    Active
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Settings -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                            Settings
+                        </h3>
+                        <form class="space-y-6 max-w-lg" id="settings-form" novalidate>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-1" for="email">
+                                    Email Address
+                                </label>
+                                <input
+                                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    id="email" name="email" type="email" value="jane.doe@example.com" required />
+                                <p class="text-red-600 text-sm mt-1 hidden" id="email-error">
+                                    Please enter a valid email address.
+                                </p>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-1" for="password">
+                                    Change Password
+                                </label>
+                                <input
+                                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    id="password" name="password" placeholder="New password" type="password"
+                                    minlength="6" />
+                                <p class="text-red-600 text-sm mt-1 hidden" id="password-error">
+                                    Password must be at least 6 characters.
+                                </p>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-1" for="language">
+                                    Preferred Language
+                                </label>
+                                <select
+                                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    id="language" name="language" required>
+                                    <option selected="" value="english">
+                                        English
+                                    </option>
+                                    <option value="spanish">
+                                        Spanish
+                                    </option>
+                                    <option value="french">
+                                        French
+                                    </option>
+                                    <option value="german">
+                                        German
+                                    </option>
+                                    <option value="chinese">
+                                        Chinese
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <input checked=""
+                                    class="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                                    id="newsletter" name="newsletter" type="checkbox" />
+                                <label class="text-gray-700 font-medium select-none" for="newsletter">
+                                    Subscribe to newsletter
+                                </label>
+                            </div>
+                            <button
+                                class="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition font-semibold focus:outline-none"
+                                type="submit" id="save-settings-btn">
+                                Save Changes
+                            </button>
+                            <p class="text-green-600 font-semibold mt-2 hidden" id="save-success-msg">
+                                Settings saved successfully!
+                            </p>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div
+            class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
+            <p>
+                © 2024 Fluent Speech. All rights reserved.
+            </p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a aria-label="Facebook" class="hover:text-blue-600" href="#" tabindex="0">
+                    <i class="fab fa-facebook fa-lg">
+                    </i>
+                </a>
+                <a aria-label="Twitter" class="hover:text-blue-600" href="#" tabindex="0">
+                    <i class="fab fa-twitter fa-lg">
+                    </i>
+                </a>
+                <a aria-label="Instagram" class="hover:text-blue-600" href="#" tabindex="0">
+                    <i class="fab fa-instagram fa-lg">
+                    </i>
+                </a>
+                <a aria-label="LinkedIn" class="hover:text-blue-600" href="#" tabindex="0">
+                    <i class="fab fa-linkedin fa-lg">
+                    </i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for editing profile picture -->
+    <div aria-hidden="true" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-30 hidden"
+        id="profile-pic-modal" role="dialog" aria-modal="true" aria-labelledby="profile-pic-modal-title">
+        <div class="bg-white rounded-lg max-w-md w-full p-6 relative">
+            <h2 class="text-xl font-semibold mb-4" id="profile-pic-modal-title">
+                Update Profile Picture
+            </h2>
+            <input accept="image/*" class="mb-4" id="profile-pic-input" type="file" />
+            <div class="flex justify-end space-x-4">
+                <button class="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400 transition focus:outline-none"
+                    id="profile-pic-cancel-btn" type="button">
+                    Cancel
+                </button>
+                <button class="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition focus:outline-none"
+                    id="profile-pic-save-btn" type="button" disabled>
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for progress update -->
+    <div aria-hidden="true" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-30 hidden"
+        id="progress-modal" role="dialog" aria-modal="true" aria-labelledby="progress-modal-title">
+        <div class="bg-white rounded-lg max-w-sm w-full p-6 relative">
+            <h2 class="text-xl font-semibold mb-4" id="progress-modal-title">
+                Update Progress
+            </h2>
+            <label class="block mb-2 font-medium text-gray-700" for="progress-range">
+                Progress: <span id="progress-value">0</span>%
+            </label>
+            <input class="w-full" id="progress-range" max="100" min="0" step="1" type="range" value="0" />
+            <div class="flex justify-end space-x-4 mt-6">
+                <button class="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400 transition focus:outline-none"
+                    id="progress-cancel-btn" type="button">
+                    Cancel
+                </button>
+                <button class="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition focus:outline-none"
+                    id="progress-save-btn" type="button">
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for recent activity details -->
+    <div aria-hidden="true" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-30 hidden"
+        id="activity-modal" role="dialog" aria-modal="true" aria-labelledby="activity-modal-title">
+        <div class="bg-white rounded-lg max-w-md w-full p-6 relative">
+            <h2 class="text-xl font-semibold mb-4" id="activity-modal-title">
+                Activity Details
+            </h2>
+            <p class="text-gray-700" id="activity-modal-content">
+            </p>
+            <div class="flex justify-end mt-6">
+                <button class="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition focus:outline-none"
+                    id="activity-close-btn" type="button">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // User menu toggle
+        const userMenuButton = document.getElementById('user-menu-button');
+        const userDropdown = document.getElementById('user-dropdown');
+        const userMenuIcon = document.getElementById('user-menu-icon');
+
+        userMenuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isHidden = userDropdown.classList.contains('hidden');
+            if (isHidden) {
+                userDropdown.classList.remove('hidden');
+                userMenuButton.setAttribute('aria-expanded', 'true');
+                userMenuIcon.classList.add('rotate-180');
+            } else {
+                userDropdown.classList.add('hidden');
+                userMenuButton.setAttribute('aria-expanded', 'false');
+                userMenuIcon.classList.remove('rotate-180');
+            }
+        });
+
+        // Close user menu on outside click
+        document.addEventListener('click', () => {
+            if (!userDropdown.classList.contains('hidden')) {
+                userDropdown.classList.add('hidden');
+                userMenuButton.setAttribute('aria-expanded', 'false');
+                userMenuIcon.classList.remove('rotate-180');
+            }
+        });
+
+        // Logout button interaction
+        const logoutBtn = document.getElementById('logout-btn');
+        logoutBtn.addEventListener('click', () => {
+            alert('You have been logged out.');
+            // Here you would add actual logout logic
+        });
+
+        // Edit Profile button opens modal to update profile picture
+        const editProfileBtn = document.getElementById('edit-profile-btn');
+        const profilePicModal = document.getElementById('profile-pic-modal');
+        const profilePicInput = document.getElementById('profile-pic-input');
+        const profilePicSaveBtn = document.getElementById('profile-pic-save-btn');
+        const profilePicCancelBtn = document.getElementById('profile-pic-cancel-btn');
+        const profilePicImg = document.getElementById('profile-pic');
+
+        editProfileBtn.addEventListener('click', () => {
+            profilePicInput.value = '';
+            profilePicSaveBtn.disabled = true;
+            profilePicModal.classList.remove('hidden');
+            profilePicInput.focus();
+        });
+
+        profilePicCancelBtn.addEventListener('click', () => {
+            profilePicModal.classList.add('hidden');
+        });
+
+        profilePicInput.addEventListener('change', () => {
+            profilePicSaveBtn.disabled = !profilePicInput.files.length;
+        });
+
+        profilePicSaveBtn.addEventListener('click', () => {
+            if (profilePicInput.files.length) {
+                const file = profilePicInput.files[0];
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    profilePicImg.src = e.target.result;
+                    profilePicModal.classList.add('hidden');
+                    alert('Profile picture updated!');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Progress bars interaction
+        const progressModal = document.getElementById('progress-modal');
+        const progressRange = document.getElementById('progress-range');
+        const progressValue = document.getElementById('progress-value');
+        const progressSaveBtn = document.getElementById('progress-save-btn');
+        const progressCancelBtn = document.getElementById('progress-cancel-btn');
+        let currentProgressBar = null;
+
+        function openProgressModal(bar) {
+            currentProgressBar = bar;
+            const currentWidth = bar.querySelector('div').style.width;
+            const currentPercent = parseInt(currentWidth);
+            progressRange.value = currentPercent;
+            progressValue.textContent = currentPercent;
+            progressModal.classList.remove('hidden');
+            progressRange.focus();
+        }
+
+        document.querySelectorAll('[id^="progress-"]').forEach(bar => {
+            bar.addEventListener('click', () => openProgressModal(bar));
+            bar.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openProgressModal(bar);
+                }
+            });
+        });
+
+        progressRange.addEventListener('input', () => {
+            progressValue.textContent = progressRange.value;
+        });
+
+        progressCancelBtn.addEventListener('click', () => {
+            progressModal.classList.add('hidden');
+            currentProgressBar = null;
+        });
+
+        progressSaveBtn.addEventListener('click', () => {
+            if (currentProgressBar) {
+                const newVal = progressRange.value;
+                currentProgressBar.querySelector('div').style.width = newVal + '%';
+                currentProgressBar.setAttribute('aria-valuenow', newVal);
+                currentProgressBar.nextElementSibling?.textContent = newVal + '%';
+                // Also update the sibling span with percentage text
+                const labelSpan = currentProgressBar.previousElementSibling.querySelector('span.text-gray-600');
+                if (labelSpan) labelSpan.textContent = newVal + '%';
+                progressModal.classList.add('hidden');
+                currentProgressBar = null;
+                alert('Progress updated to ' + newVal + '%');
+            }
+        });
+
+        // Recent activity items open modal with details
+        const activityModal = document.getElementById('activity-modal');
+        const activityModalContent = document.getElementById('activity-modal-content');
+        const activityCloseBtn = document.getElementById('activity-close-btn');
+
+        document.querySelectorAll('ul > li[role="button"]').forEach(item => {
+            item.addEventListener('click', () => {
+                activityModalContent.textContent = item.getAttribute('data-activity');
+                activityModal.classList.remove('hidden');
+                activityCloseBtn.focus();
+            });
+            item.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    activityModalContent.textContent = item.getAttribute('data-activity');
+                    activityModal.classList.remove('hidden');
+                    activityCloseBtn.focus();
+                }
+            });
+        });
+
+        activityCloseBtn.addEventListener('click', () => {
+            activityModal.classList.add('hidden');
+        });
+
+        // Settings form validation and submission
+        const settingsForm = document.getElementById('settings-form');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const emailError = document.getElementById('email-error');
+        const passwordError = document.getElementById('password-error');
+        const saveSuccessMsg = document.getElementById('save-success-msg');
+
+        settingsForm.addEventListener('submit', e => {
+            e.preventDefault();
+            let valid = true;
+
+            // Email validation
+            if (!emailInput.value || !emailInput.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                emailError.classList.remove('hidden');
+                valid = false;
+            } else {
+                emailError.classList.add('hidden');
+            }
+
+            // Password validation (optional)
+            if (passwordInput.value && passwordInput.value.length < 6) {
+                passwordError.classList.remove('hidden');
+                valid = false;
+            } else {
+                passwordError.classList.add('hidden');
+            }
+
+            if (valid) {
+                // Simulate saving settings
+                saveSuccessMsg.classList.remove('hidden');
+                setTimeout(() => {
+                    saveSuccessMsg.classList.add('hidden');
+                }, 3000);
+            }
+        });
+
+        // Logo click scrolls to top
+        const logo = document.getElementById('logo');
+        logo.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+</body>
+
+</html>

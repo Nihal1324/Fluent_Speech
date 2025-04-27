@@ -32,12 +32,14 @@ html, body {
   animation: glow-border 2s infinite ease-in-out;
   justify-content: center;
   transition: all 0.4s ease;
+  animation: slideIn 1s ease-out;
  
 }
 
 /* Hover animation for container */
 .container:hover {
   animation: glow-border 2s infinite ease-in-out;
+  box-shadow: 0 0 40px rgba(0, 181, 241, 0.4), 0 6px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Left panel (image area) styling */
@@ -46,6 +48,7 @@ html, body {
   max-width: 100%;
   max-height: 80%;
   height: auto;
+  
 }
 
 .left_pannel {
@@ -141,15 +144,40 @@ html, body {
   font-weight: 600;
   width: 200px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   box-shadow: 0 10px 20px rgba(0, 181, 241, 0.2);
+  position: relative;
+  animation: breathe 3s infinite ease-in-out; /* Breathing animation */
 }
-
+/* Animation for breathing effect */
+@keyframes breathe {
+  0% {
+    transform: scale(1); /* Initial size */
+    box-shadow: 0 10px 20px rgba(0, 181, 241, 0.2); /* Light shadow */
+  }
+  50% {
+    transform: scale(1.1); /* Grow the button */
+    box-shadow: 0 15px 30px rgba(0, 181, 241, 0.3); /* More pronounced shadow */
+  }
+  100% {
+    transform: scale(1); /* Return to original size */
+    box-shadow: 0 10px 20px rgba(0, 181, 241, 0.2); /* Return shadow to normal */
+  }
+}
 /* Hover effect for buttons */
 .btn-primary:hover,
 .btn-secondary:hover {
   background-color: #009dd0;
   transform: scale(1.05);
+  box-shadow: 0 15px30 px rgba(0, 181, 241, 0.7); /* More pronounced shadow */
+  transition: all 0.3s ease;
+  background: linear-gradient(45deg, #00b5f1, #009dd0);
+  border: 2px solid #ffffff;
+}
+.btn-primary:active,
+.btn-secondary:active {
+  transform: scale(1); /* Button returns to normal size when pressed */
+  box-shadow: 0 10px 20px rgba(0, 181, 241, 0.2); /* Shadow effect goes back */
 }
 
 /* Mobile responsive design */
@@ -167,6 +195,13 @@ html, body {
   .left_pannel img {
     max-height: 200px;
   }
+  .Right_pannel h1 {
+    font-size: 2.5rem;
+  }
+
+  .Right_pannel p {
+    font-size: 1rem;
+  } 
 }
 
 /* Logo bar styling */
@@ -219,4 +254,42 @@ html, body {
   font-weight: 600;
   color: #003b5b;
   font-family: "Montserrat", sans-serif;
+}
+
+/* Add hover effect to images */
+.left_pannel img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Add hover effect to logo bar */
+.logo-bar:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+/* Hover effect for logo icons */
+.logo-icons img:hover {
+  transform: rotate(10deg);
+  transition: transform 0.3s ease;
+}
+/* Focus effect for buttons */
+.btn-primary:focus, .btn-secondary:focus {
+  outline: 3px solid #00b5f1;
+  outline-offset: 2px;
+}
+/* Mobile button padding */
+@media (max-width: 768px) {
+  .btn-primary, .btn-secondary {
+    padding: 15px 30px;
+  }
+}
+/* New page load animation */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply animation to the main container */
+.container {
+  animation: slideIn 1s ease-out;
 }

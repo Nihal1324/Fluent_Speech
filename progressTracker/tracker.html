@@ -1,0 +1,189 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Track Your Progress</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="/progressTracker/assets/logo2.png" />
+</head>
+<style>
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 1s ease-out;
+    }
+</style>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+
+<body class="bg-white font-sans">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-4 shadow-md flex items-center justify-between px-6">
+        <div class="text-xl font-bold animate-fade-in">Weekly Progress Tracker</div>
+        <div class="flex space-x-4">
+          <a href="/HomePage/home.html" class="hover:text-gray-200 transition-colors">
+            <i class="fas fa-home text-lg"></i>
+          </a>
+          <a href="/UserPanel/user.html" class="hover:text-gray-200 transition-colors">
+            <i class="fas fa-user text-lg"></i>
+          </a>
+        </div>
+      </header>
+    
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="text-center mb-10">
+            <h2 class="text-xl font-semibold text-gray-900">Track Your Progress</h2>
+            <p class="text-gray-700 mt-2">Monitor your improvement with detailed analytics and insights</p>
+        </div>
+        <div class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0">
+            <!-- Left container -->
+            <div class="bg-white rounded-xl shadow-lg p-8 grid grid-cols-2 gap-6 md:w-1/2">
+                <!-- Weekly Progress -->
+                <div class="bg-blue-50 rounded-xl flex flex-col items-center justify-center space-y-3 p-6 
+            transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer hover:ring-2 hover:ring-blue-200">
+
+                    <div class="relative w-20 h-20">
+                        <svg class="w-20 h-20" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32z" stroke="#D1D5DB" stroke-width="4"
+                                class="opacity-30" />
+                            <path d="M18 2a16 16 0 1 1 0 32" stroke="#2563EB" stroke-width="4" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-dasharray="85, 100" />
+                        </svg>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center text-blue-600 font-semibold text-lg select-none">
+                            85%</div>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-bold text-gray-900 text-sm">Weekly Progress</p>
+                        <p class="text-gray-600 text-xs mt-1">Exercises Completed</p>
+                    </div>
+                </div>
+                <!-- Current Streak -->
+                <div class="bg-blue-50 rounded-xl flex flex-col items-center justify-center space-y-3 p-6 
+            transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer hover:ring-2 hover:ring-blue-200">
+
+                    <div class="bg-blue-100 rounded-full p-3">
+                        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M12 2C10 6 7 8 7 12a5 5 0 0 0 10 0c0-4-3-6-5-10z" />
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-bold text-blue-600 text-lg">14 Days</p>
+                        <p class="font-semibold text-gray-900 text-xs mt-1">Current Streak</p>
+                    </div>
+                </div>
+                <!-- Practice Time -->
+                <div class="bg-blue-50 rounded-xl flex flex-col items-center justify-center space-y-3 p-6 
+                transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer hover:ring-2 hover:ring-blue-200">
+                    <div class="bg-blue-100 rounded-full p-3 relative">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 7v5l3 3" />
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-bold text-blue-600 text-lg">5.5 hrs</p>
+                        <p class="font-semibold text-gray-900 text-xs mt-1">Practice Time</p>
+                    </div>
+                </div>
+                <!-- Achievements -->
+                <div class="bg-blue-50 rounded-xl flex flex-col items-center justify-center space-y-3 p-6 
+            transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer hover:ring-2 hover:ring-blue-200">
+                    <div class="bg-blue-100 rounded-full p-3">
+                        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M12 2a7 7 0 0 0-7 7v7a7 7 0 0 0 14 0v-7a7 7 0 0 0-7-7z" />
+                            <path d="M9 21h6" stroke="#2563EB" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-bold text-blue-600 text-lg">12</p>
+                        <p class="font-semibold text-gray-900 text-xs mt-1">Achievements</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Right container -->
+            <div class="bg-white rounded-xl shadow-lg p-8 md:w-1/2 flex flex-col justify-between">
+                <h3 class="font-semibold text-gray-900 mb-6 w-full text-left text-lg">Speech Clarity Improvement</h3>
+                <div class="flex items-end justify-center space-x-6 h-40 w-full max-w-md mx-auto mt-auto">
+                    <div class="flex flex-col items-center space-y-1" data-aos=" fade-up" data-aos-delay="100">
+                        <div
+                            class="w-8 rounded-t-lg bg-blue-600 hover:scale-105 transition-transform duration-300 h-[100px]">
+                        </div>
+                        <span class="text-xs text-gray-600">Week 1</span>
+                    </div>
+                    <div class="flex flex-col items-center space-y-1" data-aos=" fade-up" data-aos-delay="150">
+                        <div
+                            class="w-8 rounded-t-lg bg-blue-600 hover:scale-105 transition-transform duration-300 h-[128px]">
+                        </div>
+                        <span class="text-xs text-gray-600">Week 2</span>
+                    </div>
+                    <div class="flex flex-col items-center space-y-1"data-aos=" fade-up" data-aos-delay="200">
+                        <div
+                            class="w-8 rounded-t-lg bg-blue-600 hover:scale-105 transition-transform duration-300 h-[156px]">
+                        </div>
+                        <span class="text-xs text-gray-600">Week 3</span>
+                    </div>
+                    <div class="flex flex-col items-center space-y-1" data-aos=" fade-up" data-aos-delay="250">
+                        <div
+                            class="w-8 rounded-t-lg bg-blue-600 hover:scale-105 transition-transform duration-300 h-[184px]">
+                        </div>
+                        <span class="text-xs text-gray-600">Week 4</span>
+                    </div>
+                    <div class="flex flex-col items-center space-y-1" data-aos=" fade-up" data-aos-delay="300">
+                        <div
+                            class="w-8 rounded-t-lg bg-blue-600 hover:scale-105 transition-transform duration-300 h-[212px]">
+                        </div>
+                        <span class="text-xs text-gray-600">Week 5</span>
+                    </div>
+                    <div class="flex flex-col items-center space-y-1" data-aos=" fade-up" data-aos-delay="350">
+                        <div
+                            class="w-8 rounded-t-lg bg-blue-600 hover:scale-105 transition-transform duration-300 h-[240px]">
+                        </div>
+                        <span class="text-xs text-gray-600">Week 6</span>
+                    </div>
+                    <div class="flex flex-col items-center space-y-1" data-aos=" fade-up" data-aos-delay="400">
+                        <div
+                            class="w-8 rounded-t-lg bg-blue-600 hover:scale-105 transition-transform duration-300 h-[268px]">
+                        </div>
+                        <span class="text-xs text-gray-600">Week 7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-100 mt-12 py-6 border-t">
+        <div class="container mx-auto px-4 flex justify-between items-center text-sm text-gray-600">
+            <span>&copy; 2025 Fluent Speech</span>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-blue-600 transition-colors">About</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Privacy</a>
+                <a href="/contact us/contact.html" class="hover:text-blue-600 transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

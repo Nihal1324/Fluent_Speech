@@ -1,0 +1,463 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Fluent Speech - Coach Consultation
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <link rel="icon" href="/HomePage/assets/logo2.png"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-white shadow">
+   <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <a class="flex items-center space-x-3" href="#">
+     <img alt="Fluent Speech logo, stylized FS letters in blue and white" class="w-12 h-12" height="48" src="/HomePage/assets/logo3.svg" width="48"/>
+     <span class="text-2xl font-semibold text-blue-600">
+      Fluent Speech
+     </span>
+    </a>
+    <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+     <a class="hover:text-blue-600 transition" href="/HomePage/home.html">
+      Home
+     </a>
+     <a class="hover:text-blue-600 transition" href="/aboutUS/AboutUs.html">
+      About
+     </a>
+     <a class="hover:text-blue-600 transition" href="/featuresPage/features.html">
+      Services
+     </a>
+     <a class="hover:text-blue-600 transition" href="/contact us/contact.html">
+      Contact
+     </a>
+    </nav>
+    <button aria-label="Open menu" class="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600" id="mobile-menu-button">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+   </div>
+   <!-- Mobile menu -->
+   <nav aria-label="Mobile menu" class="hidden md:hidden bg-white border-t border-gray-200" id="mobile-menu">
+    <a class="block px-6 py-3 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600" href="/HomePage/home.html">
+     Home
+    </a>
+    <a class="block px-6 py-3 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600" href="/aboutUS/AboutUs.html">
+     About
+    </a>
+    <a class="block px-6 py-3 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600" href="/featuresPage/features.html">
+     Services
+    </a>
+    <a class="block px-6 py-3 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600" href="/contact us/contact.html">
+     Contact
+    </a>
+   </nav>
+  </header>
+  <main class="flex-grow container mx-auto px-6 py-12 max-w-5xl">
+   <section class="text-center mb-12">
+    <h1 class="text-4xl font-extrabold text-blue-700 mb-4">
+     Book Your Coach Consultation
+    </h1>
+    <p class="text-gray-700 text-lg max-w-3xl mx-auto">
+     Take the first step towards fluent and confident speech. Schedule a
+        personalized consultation with one of our expert speech coaches to
+        discuss your goals and create a tailored plan just for you.
+    </p>
+   </section>
+   <section class="bg-white rounded-lg shadow-lg p-8 max-w-3xl mx-auto">
+    <form action="#" aria-label="Coach consultation booking form" class="space-y-6" id="consultationForm" method="POST" novalidate>
+     <div>
+      <label class="block text-gray-700 font-semibold mb-2" for="fullName">
+       Full Name
+      </label>
+      <input aria-describedby="fullNameError" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" id="fullName" name="fullName" placeholder="Your full name" required="" type="text"/>
+      <p class="text-red-600 text-sm mt-1 hidden" id="fullNameError">
+       Please enter your full name.
+      </p>
+     </div>
+     <div>
+      <label class="block text-gray-700 font-semibold mb-2" for="email">
+       Email Address
+      </label>
+      <input aria-describedby="emailError" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" id="email" name="email" placeholder="you@example.com" required="" type="email"/>
+      <p class="text-red-600 text-sm mt-1 hidden" id="emailError">
+       Please enter a valid email address.
+      </p>
+     </div>
+     <div>
+      <label class="block text-gray-700 font-semibold mb-2" for="phone">
+       Phone Number
+      </label>
+      <input aria-describedby="phoneError" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" id="phone" name="phone" placeholder="+1 (555) 123-4567" type="tel" pattern="^\+?[0-9\s\-\(\)]{7,15}$"/>
+      <p class="text-red-600 text-sm mt-1 hidden" id="phoneError">
+       Please enter a valid phone number or leave blank.
+      </p>
+     </div>
+     <div>
+      <label class="block text-gray-700 font-semibold mb-2" for="preferredDate">
+       Preferred Date
+      </label>
+      <input aria-describedby="dateError" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" id="preferredDate" min="" name="preferredDate" required="" type="date"/>
+      <p class="text-red-600 text-sm mt-1 hidden" id="dateError">
+       Please select a valid date (today or later).
+      </p>
+     </div>
+     <div>
+      <label class="block text-gray-700 font-semibold mb-2" for="preferredTime">
+       Preferred Time
+      </label>
+      <select aria-describedby="timeError" class="w-full border border-gray-300 rounded-md px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" id="preferredTime" name="preferredTime" required="">
+       <option disabled="" selected="" value="">
+        Select a time slot
+       </option>
+       <option>
+        9:00 AM - 10:00 AM
+       </option>
+       <option>
+        10:00 AM - 11:00 AM
+       </option>
+       <option>
+        11:00 AM - 12:00 PM
+       </option>
+       <option>
+        1:00 PM - 2:00 PM
+       </option>
+       <option>
+        2:00 PM - 3:00 PM
+       </option>
+       <option>
+        3:00 PM - 4:00 PM
+       </option>
+       <option>
+        4:00 PM - 5:00 PM
+       </option>
+      </select>
+      <p class="text-red-600 text-sm mt-1 hidden" id="timeError">
+       Please select a preferred time.
+      </p>
+     </div>
+     <div>
+      <label class="block text-gray-700 font-semibold mb-2" for="goals">
+       What are your speech goals?
+      </label>
+      <textarea class="w-full border border-gray-300 rounded-md px-4 py-3 resize-y focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" id="goals" name="goals" placeholder="Briefly describe what you want to achieve" rows="4"></textarea>
+     </div>
+     <div>
+      <label class="inline-flex items-center space-x-2">
+       <input aria-describedby="agreeError" class="form-checkbox h-5 w-5 text-blue-600" id="agree" name="agree" required="" type="checkbox"/>
+       <span class="text-gray-700 text-sm">
+        I agree to the
+        <a class="text-blue-600 underline" href="#" target="_blank" rel="noopener noreferrer">
+         terms and conditions
+        </a>
+       </span>
+      </label>
+      <p class="text-red-600 text-sm mt-1 hidden" id="agreeError">
+       You must agree to the terms and conditions.
+      </p>
+     </div>
+     <div>
+      <button aria-live="polite" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition flex justify-center items-center space-x-2" id="submitBtn" type="submit">
+       <span>
+        Book Consultation
+       </span>
+       <svg aria-hidden="true" class="animate-spin h-5 w-5 text-white hidden" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" stroke-opacity="0.25" stroke-linecap="round" stroke-linejoin="round">
+        </circle>
+        <path d="M4 12a8 8 0 018-8" stroke-linecap="round" stroke-linejoin="round">
+        </path>
+       </svg>
+      </button>
+     </div>
+    </form>
+    <div aria-live="polite" class="mt-6 text-center text-green-600 font-semibold text-lg hidden" id="successMessage">
+     Thank you! Your consultation has been booked. We will contact you soon.
+    </div>
+   </section>
+   <section class="mt-16 max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl font-bold text-blue-700 mb-6">
+     Meet Our Expert Coaches
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+     <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center hover:shadow-xl transition-shadow cursor-pointer" tabindex="0" role="button" aria-pressed="false" aria-label="More info about Emily Johnson">
+      <img alt="Portrait of a smiling female speech coach with short curly hair wearing a blue blouse" class="rounded-full mb-4 w-36 h-36 object-cover" height="150" src="https://storage.googleapis.com/a1aa/image/882519af-3272-4617-9748-e29800f05879.jpg" width="150"/>
+      <h3 class="text-xl font-semibold text-gray-900 mb-1">
+       Emily Johnson
+      </h3>
+      <p class="text-gray-600 mb-2 text-center">
+       Specialist in accent reduction and public speaking confidence.
+      </p>
+      <div class="flex space-x-4 text-blue-600 text-lg">
+       <a aria-label="Emily Johnson LinkedIn profile" href="#" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin">
+        </i>
+       </a>
+       <a aria-label="Email Emily Johnson" href="mailto:emily.johnson@fluentspeech.com">
+        <i class="fas fa-envelope">
+        </i>
+       </a>
+      </div>
+     </div>
+     <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center hover:shadow-xl transition-shadow cursor-pointer" tabindex="0" role="button" aria-pressed="false" aria-label="More info about Michael Lee">
+      <img alt="Portrait of a confident male speech coach with glasses and short dark hair wearing a white shirt and navy blazer" class="rounded-full mb-4 w-36 h-36 object-cover" height="150" src="https://storage.googleapis.com/a1aa/image/092fd14b-3d9b-4b43-d982-35048a72d70b.jpg" width="150"/>
+      <h3 class="text-xl font-semibold text-gray-900 mb-1">
+       Michael Lee
+      </h3>
+      <p class="text-gray-600 mb-2 text-center">
+       Expert in fluency techniques and overcoming speech anxiety.
+      </p>
+      <div class="flex space-x-4 text-blue-600 text-lg">
+       <a aria-label="Michael Lee LinkedIn profile" href="#" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin">
+        </i>
+       </a>
+       <a aria-label="Email Michael Lee" href="mailto:michael.lee@fluentspeech.com">
+        <i class="fas fa-envelope">
+        </i>
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-white border-t border-gray-200 mt-16">
+   <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
+    <p>
+     © 2024 Fluent Speech. All rights reserved.
+    </p>
+    <div class="flex space-x-6 mt-4 md:mt-0">
+     <a aria-label="Facebook" class="hover:text-blue-600" href="#" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-facebook fa-lg">
+      </i>
+     </a>
+     <a aria-label="Twitter" class="hover:text-blue-600" href="#" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-twitter fa-lg">
+      </i>
+     </a>
+     <a aria-label="Instagram" class="hover:text-blue-600" href="#" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-instagram fa-lg">
+      </i>
+     </a>
+     <a aria-label="LinkedIn" class="hover:text-blue-600" href="#" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-linkedin fa-lg">
+      </i>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   // Mobile menu toggle
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    // Set min date for preferredDate input to today
+    const dateInput = document.getElementById('preferredDate');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+
+    // Form validation and submission simulation
+    const form = document.getElementById('consultationForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const successMessage = document.getElementById('successMessage');
+
+    // Error elements
+    const fullNameError = document.getElementById('fullNameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const dateError = document.getElementById('dateError');
+    const timeError = document.getElementById('timeError');
+    const agreeError = document.getElementById('agreeError');
+
+    function validateEmail(email) {
+      // Simple email regex
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    function validatePhone(phone) {
+      if (phone.trim() === '') return true; // optional
+      const re = /^\+?[0-9\s\-\(\)]{7,15}$/;
+      return re.test(phone);
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Reset errors
+      fullNameError.classList.add('hidden');
+      emailError.classList.add('hidden');
+      phoneError.classList.add('hidden');
+      dateError.classList.add('hidden');
+      timeError.classList.add('hidden');
+      agreeError.classList.add('hidden');
+      successMessage.classList.add('hidden');
+
+      let valid = true;
+
+      // Validate full name
+      if (!form.fullName.value.trim()) {
+        fullNameError.classList.remove('hidden');
+        valid = false;
+      }
+
+      // Validate email
+      if (!validateEmail(form.email.value.trim())) {
+        emailError.classList.remove('hidden');
+        valid = false;
+      }
+
+      // Validate phone (optional)
+      if (!validatePhone(form.phone.value.trim())) {
+        phoneError.classList.remove('hidden');
+        valid = false;
+      }
+
+      // Validate date (today or later)
+      if (!form.preferredDate.value || form.preferredDate.value < today) {
+        dateError.classList.remove('hidden');
+        valid = false;
+      }
+
+      // Validate time
+      if (!form.preferredTime.value) {
+        timeError.classList.remove('hidden');
+        valid = false;
+      }
+
+      // Validate agree checkbox
+      if (!form.agree.checked) {
+        agreeError.classList.remove('hidden');
+        valid = false;
+      }
+
+      if (!valid) {
+        return;
+      }
+
+      // Disable submit button and show spinner
+      submitBtn.disabled = true;
+      submitBtn.querySelector('span').classList.add('opacity-50');
+      submitBtn.querySelector('svg').classList.remove('hidden');
+
+      // Simulate form submission delay
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.querySelector('span').classList.remove('opacity-50');
+        submitBtn.querySelector('svg').classList.add('hidden');
+        form.reset();
+        successMessage.classList.remove('hidden');
+        // Scroll to success message
+        successMessage.scrollIntoView({ behavior: 'smooth' });
+      }, 2000);
+    });
+
+    // Coach cards keyboard accessibility and toggle aria-pressed
+    const coachCards = document.querySelectorAll('[role="button"]');
+    coachCards.forEach(card => {
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleCoachCard(card);
+        }
+      });
+      card.addEventListener('click', () => {
+        toggleCoachCard(card);
+      });
+    });
+
+    function toggleCoachCard(card) {
+      const pressed = card.getAttribute('aria-pressed') === 'true';
+      coachCards.forEach(c => c.setAttribute('aria-pressed', 'false'));
+      if (!pressed) {
+        card.setAttribute('aria-pressed', 'true');
+        showCoachDetails(card);
+      } else {
+        card.setAttribute('aria-pressed', 'false');
+        hideCoachDetails();
+      }
+    }
+
+    // Create and manage coach detail modal
+    let modal = null;
+
+    function showCoachDetails(card) {
+      const name = card.querySelector('h3').textContent;
+      const description = card.querySelector('p').textContent;
+      const imgSrc = card.querySelector('img').src;
+      const imgAlt = card.querySelector('img').alt;
+      const linkedinLink = card.querySelector('a[href*="linkedin"]')?.href || '#';
+      const emailLink = card.querySelector('a[href^="mailto:"]')?.href || '#';
+
+      if (!modal) {
+        modal = document.createElement('div');
+        modal.setAttribute('role', 'dialog');
+        modal.setAttribute('aria-modal', 'true');
+        modal.setAttribute('aria-labelledby', 'modalTitle');
+        modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+        modal.innerHTML = `
+          <div class="bg-white rounded-lg max-w-md w-full p-6 relative shadow-lg">
+            <button aria-label="Close modal" id="modalCloseBtn" class="absolute top-3 right-3 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">
+              <i class="fas fa-times fa-lg"></i>
+            </button>
+            <img id="modalImg" alt="" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover" />
+            <h3 id="modalTitle" class="text-2xl font-bold text-center mb-2"></h3>
+            <p id="modalDesc" class="text-gray-700 mb-4 text-center"></p>
+            <div class="flex justify-center space-x-6 text-blue-600 text-2xl">
+              <a id="modalLinkedin" href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+              <a id="modalEmail" href="#" aria-label="Send email"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        `;
+        document.body.appendChild(modal);
+
+        // Close modal button
+        document.getElementById('modalCloseBtn').addEventListener('click', hideCoachDetails);
+
+        // Close modal on outside click
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            hideCoachDetails();
+          }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+            hideCoachDetails();
+          }
+        });
+      }
+
+      document.getElementById('modalTitle').textContent = name;
+      const modalImg = document.getElementById('modalImg');
+      modalImg.src = imgSrc;
+      modalImg.alt = imgAlt;
+      document.getElementById('modalDesc').textContent = description;
+      document.getElementById('modalLinkedin').href = linkedinLink;
+      document.getElementById('modalEmail').href = emailLink;
+
+      modal.classList.remove('hidden');
+      modal.focus();
+    }
+
+    function hideCoachDetails() {
+      if (modal) {
+        modal.classList.add('hidden');
+      }
+      coachCards.forEach(c => c.setAttribute('aria-pressed', 'false'));
+    }
+  </script>
+ </body>
+</html>

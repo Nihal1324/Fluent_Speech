@@ -1,0 +1,228 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Contact Us
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+    <link rel="icon" href="/featuresPage/assets/logo2.png"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-gray-50 min-h-screen flex flex-col">
+  <header class="bg-white shadow">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-6">
+     <a class="text-2xl font-bold text-indigo-600" href="#">
+      Fluent Speech
+     </a>
+     <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+      <a class="hover:text-indigo-600 transition" href="/HomePage/home.html">
+       Home
+      </a>
+      <a class="hover:text-indigo-600 transition" href="#">
+       About
+      </a>
+      <a class="hover:text-indigo-600 transition" href="featuresPage/features.html">
+       Services
+      </a>
+      <a aria-current="page" class="text-indigo-600 font-semibold" href="/contact us/contact.html">
+       Contact
+      </a>
+     </nav>
+     <button aria-label="Open menu" class="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600" id="mobile-menu-button">
+      <i class="fas fa-bars fa-lg">
+      </i>
+     </button>
+    </div>
+   </div>
+   <div class="hidden md:hidden bg-white border-t border-gray-200" id="mobile-menu">
+    <nav class="px-4 py-4 space-y-1">
+     <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600" href="/HomePage/">
+      Home
+     </a>
+     <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600" href="#">
+      About
+     </a>
+     <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600" href="featuresPage/features.html">
+      Services
+     </a>
+     <a aria-current="page" class="block px-3 py-2 rounded-md text-base font-medium text-indigo-600 bg-indigo-100" href="/contact us/contact.html">
+      Contact
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main class="flex-grow">
+   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+     <h1 class="text-4xl font-extrabold text-gray-900 mb-4">
+      Contact Us
+     </h1>
+     <p class="text-lg text-gray-600">
+      We’d love to hear from you! Whether you have a question about features, pricing, or anything else, our team is ready to answer all your questions.
+     </p>
+    </div>
+    <div class="flex flex-col md:flex-row max-w-5xl mx-auto gap-12">
+     <form action="#" class="bg-white p-8 rounded-lg shadow-md flex-1 flex flex-col" method="POST" novalidate="">
+      <div class="mb-6 flex-grow">
+       <label class="block text-gray-700 font-semibold mb-2" for="name">
+        Full Name
+       </label>
+       <input class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" id="name" name="name" placeholder="Your full name" required="" type="text"/>
+      </div>
+      <div class="mb-6 flex-grow">
+       <label class="block text-gray-700 font-semibold mb-2" for="email">
+        Email Address
+       </label>
+       <input class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" id="email" name="email" placeholder="you@example.com" required="" type="email"/>
+      </div>
+      <div class="mb-6 flex-grow">
+       <label class="block text-gray-700 font-semibold mb-2" for="phone">
+        Phone Number
+       </label>
+       <input class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" id="phone" name="phone" placeholder="+1 (555) 123-4567" type="tel"/>
+      </div>
+      <div class="mb-6 flex-grow">
+       <label class="block text-gray-700 font-semibold mb-2" for="subject">
+        Subject
+       </label>
+       <input class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" id="subject" name="subject" placeholder="Subject of your message" required="" type="text"/>
+      </div>
+      <div class="mb-6 flex-grow">
+       <label class="block text-gray-700 font-semibold mb-2" for="message">
+        Message
+       </label>
+       <textarea class="w-full px-4 py-3 border border-gray-300 rounded-md resize-y focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" id="message" name="message" placeholder="Write your message here..." required="" rows="5"></textarea>
+      </div>
+      <button class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-md hover:bg-indigo-700 transition" type="submit">
+       Send Message
+      </button>
+     </form>
+     <div class="bg-white p-8 rounded-lg shadow-md flex-1 flex flex-col justify-start">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">
+       Get in Touch
+      </h2>
+      <div class="flex items-start mb-6">
+       <i class="fas fa-map-marker-alt text-indigo-600 text-xl mt-1 mr-4">
+       </i>
+       <div>
+        <h3 class="font-semibold text-gray-800">
+         Address
+        </h3>
+        <p class="text-gray-600">
+         1234 Innovation Drive,
+         <br/>
+         Suite 100,
+         <br/>
+         San Francisco, CA 94107,
+         <br/>
+         United States
+        </p>
+       </div>
+      </div>
+      <div class="flex items-start mb-6">
+       <i class="fas fa-phone-alt text-indigo-600 text-xl mt-1 mr-4">
+       </i>
+       <div>
+        <h3 class="font-semibold text-gray-800">
+         Phone
+        </h3>
+        <p class="text-gray-600">
+         <a class="hover:text-indigo-600 transition" href="tel:+15551234567">
+          +1 (555) 123-4567
+         </a>
+         <br/>
+         <a class="hover:text-indigo-600 transition" href="tel:+15557654321">
+          +1 (555) 765-4321
+         </a>
+        </p>
+       </div>
+      </div>
+      <div class="flex items-start mb-6">
+       <i class="fas fa-envelope text-indigo-600 text-xl mt-1 mr-4">
+       </i>
+       <div>
+        <h3 class="font-semibold text-gray-800">
+         Email
+        </h3>
+        <p class="text-gray-600">
+         <a class="hover:text-indigo-600 transition" href="mailto:Nihalmlv@gmial.com">
+          Nihalmlv@gmail.com
+         </a>
+         <br/>
+         <a class="hover:text-indigo-600 transition" href="mailto:info@fluentSpeech.com">
+          info@FluentSpeech.com
+         </a>
+        </p>
+       </div>
+      </div>
+      <div class="mt-8">
+       <h3 class="text-lg font-semibold text-gray-900 mb-4">
+        Follow Us
+       </h3>
+       <div class="flex space-x-6">
+        <a aria-label="Facebook" class="text-indigo-600 hover:text-indigo-800 transition" href="#">
+         <i class="fab fa-facebook-f fa-2x">
+         </i>
+        </a>
+        <a aria-label="Twitter" class="text-indigo-600 hover:text-indigo-800 transition" href="#">
+         <i class="fab fa-twitter fa-2x">
+         </i>
+        </a>
+        <a aria-label="LinkedIn" class="text-indigo-600 hover:text-indigo-800 transition" href="https://www.linkedin.com/in/nihal-malviya/">
+         <i class="fab fa-linkedin-in fa-2x">
+         </i>
+        </a>
+        <a aria-label="Instagram" class="text-indigo-600 hover:text-indigo-800 transition" href="#">
+         <i class="fab fa-instagram fa-2x">
+         </i>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-white border-t border-gray-200">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
+    <p>
+     © 2024 CompanyName. All rights reserved.
+    </p>
+    <div class="flex space-x-6 mt-4 md:mt-0">
+     <a aria-label="Facebook" class="hover:text-indigo-600" href="#">
+      <i class="fab fa-facebook-f fa-lg">
+      </i>
+     </a>
+     <a aria-label="Twitter" class="hover:text-indigo-600" href="#">
+      <i class="fab fa-twitter fa-lg">
+      </i>
+     </a>
+     <a aria-label="LinkedIn" class="hover:text-indigo-600" href=" https://www.linkedin.com/in/nihal-malviya/">
+      <i class="fab fa-linkedin-in fa-lg">
+      </i>
+     </a>
+     <a aria-label="Instagram" class="hover:text-indigo-600" href="#">
+      <i class="fab fa-instagram fa-lg">
+      </i>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+ </body>
+</html>

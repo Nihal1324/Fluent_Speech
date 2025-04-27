@@ -1,0 +1,407 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>About Us - Fluent Speech</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+   rel="stylesheet"
+  />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"
+   rel="stylesheet"
+  />
+  <link rel="icon" href="/featuresPage/assets/logo2.png" />
+  <style>
+   body {
+    font-family: "Inter", sans-serif;
+   }
+   /* Additional hover effects */
+   a:hover,
+   a:focus {
+    text-decoration: underline;
+   }
+   nav a:hover,
+   nav a:focus {
+    color: #2563eb; /* Tailwind blue-600 */
+    text-decoration: none;
+   }
+   .feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.3),
+      0 10px 10px -5px rgba(59, 130, 246, 0.04);
+   }
+   .feature-card:focus-within {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+   }
+   .social-icon:hover,
+   .social-icon:focus {
+    color: #2563eb;
+    transform: scale(1.2);
+    transition: transform 0.3s ease, color 0.3s ease;
+   }
+   .founder-img:hover,
+   .founder-img:focus {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4),
+      0 4px 6px -2px rgba(37, 99, 235, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+   .founder-name:hover,
+   .founder-name:focus {
+    color: #2563eb;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+   }
+  </style>
+ </head>
+ <body class="bg-gray-50 text-gray-800">
+  <header class="bg-white shadow">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-6">
+     <a
+      class="flex items-center space-x-2 hover:opacity-90 transition-opacity duration-300"
+      href="#"
+     >
+      <img
+       alt="Fluent Speech logo, stylized FS letters in blue and white"
+       class="h-12 w-12"
+       height="48"
+       src="/featuresPage/assets/logo3.svg"
+       width="48"
+      />
+      <span class="text-2xl font-bold text-blue-600">Fluent Speech</span>
+     </a>
+     <nav class="hidden md:flex space-x-8 text-gray-700 font-semibold">
+      <a
+       class="hover:text-blue-600 focus:text-blue-600 focus:outline-none transition-colors duration-300"
+       href="/HomePage/home.html"
+       >Home</a
+      >
+      <a
+       class="hover:text-blue-600 focus:text-blue-600 focus:outline-none transition-colors duration-300"
+       href="/CoursesPage/course.html"
+       >Courses</a
+      >
+      <a
+       class="hover:text-blue-600 focus:text-blue-600 focus:outline-none transition-colors duration-300"
+       href="#"
+       >About Us</a
+      >
+      <a
+       class="hover:text-blue-600 focus:text-blue-600 focus:outline-none transition-colors duration-300"
+       href="/contact us/contact.html"
+       >Contact</a
+      >
+     </nav>
+     <div class="md:hidden">
+      <button
+       aria-label="Toggle menu"
+       class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+       id="menu-btn"
+      >
+       <i class="fas fa-bars fa-lg"></i>
+      </button>
+     </div>
+    </div>
+   </div>
+   <div
+    class="hidden md:hidden bg-white border-t border-gray-200"
+    id="mobile-menu"
+   >
+    <nav
+     class="flex flex-col space-y-1 px-4 py-3 text-gray-700 font-semibold"
+    >
+     <a
+      class="block py-2 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+      href="/HomePage/home.html"
+      >Home</a
+     >
+     <a
+      class="block py-2 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+      href="/CoursesPage/course.html"
+      >Courses</a
+     >
+     <a
+      class="block py-2 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+      href="#"
+      >About Us</a
+     >
+     <a
+      class="block py-2 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+      href="/contact us/contact.html"
+      >Contact</a
+     >
+    </nav>
+   </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+   <section class="text-center max-w-3xl mx-auto mb-16">
+    <h1 class="text-4xl font-extrabold text-blue-600 mb-4">About Fluent Speech</h1>
+    <p class="text-lg text-gray-700 leading-relaxed">
+     Fluent Speech is an affordable, one-step solution designed to help
+     individuals overcome challenges such as stuttering, stage fear,
+     hesitation, and nervousness caused by medical or mental pressure. Our
+     platform combines professional coaching, therapeutic tools, community
+     support, and smart technology to empower you to communicate confidently
+     and clearly.
+    </p>
+    <p class="mt-6 text-gray-600 italic">Founded by Nihal Malviya in 2025</p>
+   </section>
+   <section class="mb-20 max-w-3xl mx-auto">
+    <h2 class="text-3xl font-semibold text-blue-600 mb-6 text-center">Founder</h2>
+    <div
+     class="flex flex-col sm:flex-row items-center bg-white rounded-lg shadow p-8 hover:shadow-xl transition-shadow duration-300"
+    >
+     <img
+      alt="Portrait of Nihal Malviya, founder of Fluent Speech, a confident young man with short black hair and a friendly smile"
+      class="w-40 h-40 rounded-full object-cover mb-6 sm:mb-0 sm:mr-8 founder-img focus:outline-none focus:ring-4 focus:ring-blue-300"
+      height="160"
+      loading="lazy"
+      src="/aboutUS/assets/myp.jpg"
+      width="160"
+      tabindex="0"
+     />
+     <div class="text-center sm:text-left">
+      <h3
+       class="text-2xl font-semibold text-gray-900 mb-2 founder-name cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-600 rounded"
+       tabindex="0"
+      >
+       Nihal Malviya
+      </h3>
+      <p class="text-blue-600 font-medium mb-4">Founder &amp; Visionary (2025)</p>
+      <p class="text-gray-700 leading-relaxed mb-6">
+       Nihal Malviya founded Fluent Speech in 2025 with a vision to create an
+       affordable, comprehensive platform that supports individuals facing
+       speech challenges. His passion for communication and technology drives
+       the continuous innovation behind Fluent Speech’s coaching and smart
+       tools.
+      </p>
+      <div class="flex space-x-6 justify-center sm:justify-start text-gray-600">
+       <a
+        aria-label="Nihal Malviya Facebook"
+        class="social-icon hover:text-blue-600 focus:text-blue-600 focus:outline-none"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        tabindex="0"
+       >
+        <i class="fab fa-facebook-f fa-lg"></i>
+       </a>
+       <a
+        aria-label="Nihal Malviya Twitter"
+        class="social-icon hover:text-blue-600 focus:text-blue-600 focus:outline-none"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        tabindex="0"
+       >
+        <i class="fab fa-twitter fa-lg"></i>
+       </a>
+       <a
+        aria-label="Nihal Malviya Instagram"
+        class="social-icon hover:text-blue-600 focus:text-blue-600 focus:outline-none"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        tabindex="0"
+       >
+        <i class="fab fa-instagram fa-lg"></i>
+       </a>
+       <a
+        aria-label="Nihal Malviya LinkedIn"
+        class="social-icon hover:text-blue-600 focus:text-blue-600 focus:outline-none"
+        href="https://www.linkedin.com/in/nihal-malviya/"
+        target="_blank"
+        rel="noopener noreferrer"
+        tabindex="0"
+       >
+        <i class="fab fa-linkedin-in fa-lg"></i>
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="mb-20">
+    <h2 class="text-3xl font-semibold text-blue-600 mb-8 text-center">Our Goal</h2>
+    <ul
+     class="max-w-3xl mx-auto list-disc list-inside text-gray-700 text-lg space-y-2"
+    >
+     <li>Support individuals who stutter</li>
+     <li>Help overcome stage fear</li>
+     <li>Assist those who fumble or hesitate while speaking</li>
+     <li>Provide aid for nervousness due to medical or mental pressure</li>
+    </ul>
+   </section>
+   <section class="mb-20">
+    <h2 class="text-3xl font-semibold text-blue-600 mb-8 text-center">Key Features</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+     <div
+      class="bg-white rounded-lg shadow p-8 hover:shadow-xl hover:-translate-y-2 transition-transform transition-shadow duration-300 feature-card focus-within:outline-none focus-within:ring-4 focus-within:ring-blue-300"
+      tabindex="0"
+     >
+      <h3 class="text-2xl font-semibold text-blue-600 mb-6 flex items-center">
+       <i class="fas fa-comments mr-3 text-blue-600"></i> Speech &amp;
+       Communication Enhancement
+      </h3>
+      <ul class="list-disc list-inside space-y-3 text-gray-700">
+       <li>
+        <strong>Professional Coaching:</strong> Sessions led by experienced
+        communication coaches.
+       </li>
+       <li>
+        <strong>Error Explanations:</strong> Detailed analysis of speech errors
+        and guidance to correct them.
+       </li>
+       <li>
+        <strong>Communication Flow Checks:</strong> Using Gemini API to analyze
+        fluency, tone, and pauses.
+       </li>
+      </ul>
+     </div>
+     <div
+      class="bg-white rounded-lg shadow p-8 hover:shadow-xl hover:-translate-y-2 transition-transform transition-shadow duration-300 feature-card focus-within:outline-none focus-within:ring-4 focus-within:ring-blue-300"
+      tabindex="0"
+     >
+      <h3 class="text-2xl font-semibold text-blue-600 mb-6 flex items-center">
+       <i class="fas fa-heartbeat mr-3 text-blue-600"></i> Therapeutic &amp;
+       Practice Tools
+      </h3>
+      <ul class="list-disc list-inside space-y-3 text-gray-700">
+       <li>
+        <strong>Breathing Exercises:</strong> Exercises recommended by medical
+        professionals to reduce anxiety and increase vocal control.
+       </li>
+       <li>
+        <strong>Articulation Exercises:</strong> Targeted routines to improve
+        clarity of speech.
+       </li>
+       <li>
+        <strong>Tongue Twisters:</strong> Daily challenges to improve
+        pronunciation and fluency.
+       </li>
+       <li>
+        <strong>Mirror Talk Mode:</strong> Practice speaking while watching
+        oneself, building confidence and correcting posture/gesture.
+       </li>
+       <li>
+        <strong>Role-Play Scenarios:</strong> Interactive simulations (e.g.,
+        interviews, presentations, group talks).
+       </li>
+      </ul>
+     </div>
+     <div
+      class="bg-white rounded-lg shadow p-8 hover:shadow-xl hover:-translate-y-2 transition-transform transition-shadow duration-300 feature-card focus-within:outline-none focus-within:ring-4 focus-within:ring-blue-300"
+      tabindex="0"
+     >
+      <h3 class="text-2xl font-semibold text-blue-600 mb-6 flex items-center">
+       <i class="fas fa-user-md mr-3 text-blue-600"></i> Health &amp;
+       Supportive Care
+      </h3>
+      <ul class="list-disc list-inside space-y-3 text-gray-700">
+       <li>
+        <strong>One-on-One Doctor Consultations:</strong> Direct access to
+        speech therapists or psychologists for individual needs.
+       </li>
+      </ul>
+     </div>
+     <div
+      class="bg-white rounded-lg shadow p-8 hover:shadow-xl hover:-translate-y-2 transition-transform transition-shadow duration-300 feature-card focus-within:outline-none focus-within:ring-4 focus-within:ring-blue-300"
+      tabindex="0"
+     >
+      <h3 class="text-2xl font-semibold text-blue-600 mb-6 flex items-center">
+       <i class="fas fa-users mr-3 text-blue-600"></i> Community &amp;
+       Motivation
+      </h3>
+      <ul class="list-disc list-inside space-y-3 text-gray-700">
+       <li>
+        <strong>Regular Meets:</strong> Community video calls or local meet-ups
+        to practice and stay motivated.
+       </li>
+       <li>
+        <strong>Community Practice Rooms:</strong> Virtual rooms to practice
+        with peers in real-time (voice chat or video).
+       </li>
+       <li>
+        <strong>Speech Challenge Tournaments:</strong> Gamified competitions
+        to encourage progress and consistency.
+       </li>
+      </ul>
+     </div>
+     <div
+      class="bg-white rounded-lg shadow p-8 md:col-span-2 hover:shadow-xl hover:-translate-y-2 transition-transform transition-shadow duration-300 feature-card focus-within:outline-none focus-within:ring-4 focus-within:ring-blue-300"
+      tabindex="0"
+     >
+      <h3
+       class="text-2xl font-semibold text-blue-600 mb-6 flex items-center justify-center"
+      >
+       <i class="fas fa-robot mr-3 text-blue-600"></i> Smart Tech Integration
+      </h3>
+      <ul class="list-disc list-inside space-y-3 text-gray-700">
+       <li>
+        <strong>AI Chatbot Smart Assistant:</strong> A personal assistant that
+        provides tips, reminders, feedback on practice, and answers to user
+        questions.
+       </li>
+       <li>
+        <strong>NLP Integration:</strong> To analyze user speech and offer
+        personalized training suggestions.
+       </li>
+      </ul>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-white border-t border-gray-200 mt-20">
+   <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm"
+   >
+    <p>© 2024 Fluent Speech. All rights reserved.</p>
+    <div class="flex space-x-6 mt-4 md:mt-0">
+     <a
+      aria-label="Facebook"
+      class="social-icon hover:text-blue-600 focus:text-blue-600 focus:outline-none"
+      href="#"
+      tabindex="0"
+     >
+      <i class="fab fa-facebook-f fa-lg"></i>
+     </a>
+     <a
+      aria-label="Twitter"
+      class="social-icon hover:text-blue-600 focus:text-blue-600 focus:outline-none"
+      href="#"
+      tabindex="0"
+     >
+      <i class="fab fa-twitter fa-lg"></i>
+     </a>
+     <a
+      aria-label="Instagram"
+      class="social-icon hover:text-blue-600 focus:text-blue-600 focus:outline-none"
+      href="#"
+      tabindex="0"
+     >
+      <i class="fab fa-instagram fa-lg"></i>
+     </a>
+     <a
+      aria-label="LinkedIn"
+      class="social-icon hover:text-blue-600 focus:text-blue-600 focus:outline-none"
+      href="https://www.linkedin.com/in/nihal-malviya/"
+      tabindex="0"
+     >
+      <i class="fab fa-linkedin-in fa-lg"></i>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   const menuBtn = document.getElementById("menu-btn");
+   const mobileMenu = document.getElementById("mobile-menu");
+
+   menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+   });
+  </script>
+ </body>
+</html>
