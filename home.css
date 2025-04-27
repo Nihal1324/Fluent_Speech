@@ -1,0 +1,45 @@
+
+   body,html  {
+      font-family: 'Inter', sans-serif;
+   }
+    
+   /* Smooth button shadow transition */
+   .btn-shadow {
+     transition: box-shadow 0.3s ease;
+   }
+   .btn-shadow:hover {
+     box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+   }
+   /* Subtle image scale on hover */
+   .img-hover-scale {
+     transition: transform 0.4s ease;
+     will-change: transform;
+   }
+   .img-hover-scale:hover {
+     transform: scale(1.05);
+   }
+   /* Animate underline on nav links */
+   nav ul li a {
+     position: relative;
+     padding-bottom: 2px;
+   }
+   nav ul li a::after {
+     content: '';
+     position: absolute;
+     width: 0;
+     height: 2px;
+     bottom: 0;
+     left: 0;
+     background-color: #2563eb;
+     transition: width 0.3s ease;
+     border-radius: 2px;
+   }
+   nav ul li a:hover::after {
+     width: 100%;
+   }
+   /* Button focus ring for accessibility */
+   a:focus-visible {
+     outline: 2px solid #2563eb;
+     outline-offset: 2px;
+   }
+  
