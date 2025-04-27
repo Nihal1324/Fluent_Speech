@@ -273,147 +273,63 @@
         </section>
     </main>
 
-    <!-- Modal -->
-    <div aria-hidden="true"
-        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300"
-        id="course-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
-        <div class="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-lg relative">
-            <button aria-label="Close modal"
-                class="absolute top-4 right-4 text-gray-600 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded"
-                id="modal-close-btn" type="button">
-                <i class="fas fa-times fa-lg">
-                </i>
-            </button>
-            <img alt="" class="w-full h-64 object-cover rounded-t-lg" id="modal-image" height="256" width="600" />
-            <div class="p-6">
-                <h3 class="text-3xl font-bold text-indigo-700 mb-4" id="modal-title">
-                </h3>
-                <p class="text-gray-700 mb-4" id="modal-desc">
-                </p>
-                <p class="text-indigo-600 font-semibold mb-6" id="modal-duration">
-                </p>
-                <button
-                    class="w-full md:w-auto px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                    id="modal-enroll-btn" type="button">
-                    Enroll Now
-                    <i class="fas fa-arrow-right ml-2">
-                    </i>
-                </button>
-            </div>
-        </div>
+   
+<div aria-hidden="true"
+class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300"
+id="course-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
+<div class="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-lg relative">
+    <button aria-label="Close modal"
+        class="absolute top-4 right-4 text-gray-600 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded"
+        id="modal-close-btn" type="button">
+        <i class="fas fa-times fa-lg">
+        </i>
+    </button>
+    <img alt="" class="w-full h-64 object-cover rounded-t-lg" id="modal-image" height="256" width="600" />
+    <div class="p-6">
+        <h3 class="text-3xl font-bold text-indigo-700 mb-4" id="modal-title">
+        </h3>
+        <p class="text-gray-700 mb-4" id="modal-desc">
+        </p>
+        <p class="text-indigo-600 font-semibold mb-6" id="modal-duration">
+        </p>
+        <button
+            class="w-full md:w-auto px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            id="modal-enroll-btn" type="button">
+            Enroll Now
+            <i class="fas fa-arrow-right ml-2">
+            </i>
+        </button>
     </div>
+</div>
+</div>
 
-    <footer class="bg-white border-t border-gray-200 mt-16">
-        <div
-            class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
-            <p>
-                © 2024 Fluent Speech. All rights reserved.
-            </p>
-            <div class="flex space-x-6 mt-4 md:mt-0">
-                <a aria-label="Facebook" class="hover:text-indigo-600 transition" href="#">
-                    <i class="fab fa-facebook-f fa-lg">
-                    </i>
-                </a>
-                <a aria-label="Twitter" class="hover:text-indigo-600 transition" href="#">
-                    <i class="fab fa-twitter fa-lg">
-                    </i>
-                </a>
-                <a aria-label="Instagram" class="hover:text-indigo-600 transition" href="#">
-                    <i class="fab fa-instagram fa-lg">
-                    </i>
-                </a>
-                <a aria-label="LinkedIn" class="hover:text-indigo-600 transition" href="#">
-                    <i class="fab fa-linkedin-in fa-lg">
-                    </i>
-                </a>
-            </div>
-        </div>
-    </footer>
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Modal elements
-        const modal = document.getElementById('course-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDesc = document.getElementById('modal-desc');
-        const modalDuration = document.getElementById('modal-duration');
-        const modalImage = document.getElementById('modal-image');
-        const modalCloseBtn = document.getElementById('modal-close-btn');
-        const modalEnrollBtn = document.getElementById('modal-enroll-btn');
-
-        // Open modal with course details
-        function openModal(course) {
-            modalTitle.textContent = course.dataset.title;
-            modalDesc.textContent = course.dataset.description;
-            modalDuration.textContent = `Duration: ${course.dataset.duration}`;
-            modalImage.src = course.dataset.image;
-            modalImage.alt = course.dataset.alt;
-            modalEnrollBtn.onclick = () => {
-                alert(`You have enrolled in the "${course.dataset.title}"!`);
-                closeModal();
-            };
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            document.body.style.overflow = 'hidden';
-            modal.focus();
-        }
-
-        // Close modal
-        function closeModal() {
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            document.body.style.overflow = '';
-        }
-
-        // Event listeners for course cards
-        const courseCards = document.querySelectorAll('.course-card');
-        courseCards.forEach(card => {
-            card.addEventListener('click', () => openModal(card));
-            card.addEventListener('keydown', e => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    openModal(card);
-                }
-            });
-        });
-
-        // Close modal on close button click
-        modalCloseBtn.addEventListener('click', closeModal);
-
-        // Close modal on outside click
-        modal.addEventListener('click', e => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-
-        // Close modal on Escape key
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape' && !modal.classList.contains('opacity-0')) {
-                closeModal();
-            }
-        });
-
-        // Search functionality
-        const searchInput = document.getElementById('search-input');
-        const coursesGrid = document.getElementById('courses-grid');
-
-        searchInput.addEventListener('input', () => {
-            const query = searchInput.value.toLowerCase();
-            courseCards.forEach(card => {
-                const title = card.dataset.title.toLowerCase();
-                const description = card.dataset.description.toLowerCase();
-                if (title.includes(query) || description.includes(query)) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        });
-    </script>
+<footer class="bg-white border-t border-gray-200 mt-16">
+<div
+    class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
+    <p>
+        © 2024 Fluent Speech. All rights reserved.
+    </p>
+    <div class="flex space-x-6 mt-4 md:mt-0">
+        <a aria-label="Facebook" class="hover:text-indigo-600 transition" href="#">
+            <i class="fab fa-facebook-f fa-lg">
+            </i>
+        </a>
+        <a aria-label="Twitter" class="hover:text-indigo-600 transition" href="#">
+            <i class="fab fa-twitter fa-lg">
+            </i>
+        </a>
+        <a aria-label="Instagram" class="hover:text-indigo-600 transition" href="#">
+            <i class="fab fa-instagram fa-lg">
+            </i>
+        </a>
+        <a aria-label="LinkedIn" class="hover:text-indigo-600 transition" href="#">
+            <i class="fab fa-linkedin-in fa-lg">
+            </i>
+        </a>
+    </div>
+</div>
+</footer>
+<script src="course.js"></script>
 </body>
 
 </html>

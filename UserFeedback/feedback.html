@@ -195,35 +195,7 @@
                 </p>
             </div>
             </div>
-    </main>
-    <script>
-       
-
-        const cards = document.querySelectorAll('.testimonial-card');
-        const wrapper = document.getElementById('testimonial-wrapper');
-        let startIndex = 0;
-        const visibleCount = 5;
-
-        function showCards() {
-            cards.forEach((card, index) => {
-                card.style.display = (index >= startIndex && index < startIndex + visibleCount) ? 'block' : 'none';
-            });
-        }
-
-        function cycleCards() {
-            startIndex = (startIndex + 1) % cards.length;
-            if (startIndex + visibleCount > cards.length) {
-                startIndex = 0;
-            }
-            showCards();
-        }
-
-        // Initial display
-        showCards();
-
-        // Cycle every 3 seconds
-        setInterval(cycleCards, 3000);
-    </script>
+    </main> 
     <footer class="bg-sky-100 text-gray-700 py-6 mt-12 border-t border-sky-200">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
             <div class="text-sm text-center md:text-left">
@@ -236,7 +208,7 @@
             </div>
         </div>
     </footer>
-    
+    <script src="feedback.js"></script>
 </body>
 
 </html>

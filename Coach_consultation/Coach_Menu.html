@@ -42,54 +42,37 @@
    }
   </style>
  </head>
- <body class="bg-gray-50 min-h-screen flex flex-col">
-  <header class="bg-white shadow">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center py-6">
-        <a class="flex items-center space-x-2 text-2xl font-bold text-indigo-600" href="#" tabindex="0" aria-label="Go to homepage SpeechCare">
-            <img src="/HomePage/assets/logo3.svg" alt="Fluent Speech Logo" class="h-10 w-10 object-contain" />
-            <span>Fluent Speech</span>
+ <body class="bg-gray-100 min-h-screen flex flex-col">
+  <header class="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-800 text-white border-b border-gray-200 shadow-md sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="flex justify-between items-center py-4">
+          <a class="flex items-center space-x-2 text-2xl font-bold text-white" href="#" aria-label="Go to homepage">
+             <img src="/HomePage/assets/logo3.svg" alt="Fluent Speech Logo" class="h-10 w-10 object-contain" />
+             <span>Fluent Speech</span>
           </a>
-          
-     <nav class="hidden md:flex space-x-8 text-gray-700 font-medium" role="navigation" aria-label="Primary Navigation">
-      <a class="hover:text-indigo-600 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/HomePage/index.html" tabindex="0">
-       Home
-      </a>
-      <a class="hover:text-indigo-600 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/aboutUS/AboutUs.html" tabindex="0">
-       About
-      </a>
-      <a class="hover:text-indigo-600 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/Coach_consultation/consultation_Page.html" tabindex="0" aria-current="page">
-       Consultation
-      </a>
-      <a class="hover:text-indigo-600 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/contact us/contact.html" tabindex="0">
-       Contact
-      </a>
-     </nav>
-     <div class="md:hidden">
-      <button aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" id="menu-btn" type="button">
-       <i class="fas fa-bars fa-lg" aria-hidden="true">
-       </i>
-      </button>
-     </div>
+          <nav class="hidden md:flex space-x-8 text-white font-medium" role="navigation">
+             <a class="hover:text-indigo-300 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/HomePage/index.html">
+                Home
+             </a>
+             <a class="hover:text-indigo-300 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/aboutUS/AboutUs.html">
+                About
+             </a>
+             <a class="hover:text-indigo-300 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/Coach_consultation/consultation_Page.html" aria-current="page">
+                Consultation
+             </a>
+             <a class="hover:text-indigo-300 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/contact us/contact.html">
+                Contact
+             </a>
+          </nav>
+          <div class="md:hidden">
+             <button aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" id="menu-btn" type="button">
+                <i class="fas fa-bars fa-lg" aria-hidden="true"></i>
+             </button>
+          </div>
+       </div>
     </div>
-   </div>
-   <nav class="hidden md:hidden bg-white border-t border-gray-200" id="mobile-menu" role="navigation" aria-label="Mobile Navigation">
-    <div class="px-4 py-4 space-y-1">
-     <a class="block text-gray-700 font-medium py-2 hover:bg-indigo-50 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600" href="/HomePage/index.html" tabindex="0">
-      Home
-     </a>
-     <a class="block text-gray-700 font-medium py-2 hover:bg-indigo-50 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600" href="/aboutUS/AboutUs.html" tabindex="0">
-      About
-     </a>
-     <a class="block text-gray-700 font-medium py-2 hover:bg-indigo-50 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600" href="/Coach_consultation/consultation_Page.html" tabindex="0" aria-current="page">
-      Consultation
-     </a>
-     <a class="block text-gray-700 font-medium py-2 hover:bg-indigo-50 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600" href="/contact us/contact.html" tabindex="0">
-      Contact
-     </a>
-    </div>
-   </nav>
-  </header>
+ </header>
+ 
   <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
    <h1 class="text-4xl font-extrabold text-gray-900 mb-6 text-center" tabindex="0">
     Consult with Expert Speech Therapists
@@ -291,11 +274,29 @@
     </article>
    </section>
   </main>
-  <footer class="bg-white border-t border-gray-200 py-8 mt-12">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 text-sm" tabindex="0">
-    © 2024 SpeechCare. All rights reserved.
-   </div>
-  </footer>
+  <footer class="bg-blue-900 text-white py-4 mt-">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="flex flex-col sm:flex-row justify-between items-center">
+          <div class="text-center sm:text-left">
+             <a class="text-2xl font-bold" href="#">
+                <img src="/HomePage/assets/logo3.svg" alt="Fluent Speech Logo" class="h-10 w-10 object-contain mb-2" />
+                <span>Fluent Speech</span>
+             </a>
+             <p class="mt-4">Providing expert speech therapy for all ages. Let’s help you speak with confidence!</p>
+          </div>
+          <div class="mt-6 sm:mt-0 flex justify-center sm:justify-end space-x-8">
+             <a href="/HomePage/index.html" class="text-indigo-300 hover:text-indigo-400">Home</a>
+             <a href="/aboutUS/AboutUs.html" class="text-indigo-300 hover:text-indigo-400">About</a>
+             <a href="/Coach_consultation/consultation_Page.html" class="text-indigo-300 hover:text-indigo-400">Consultation</a>
+             <a href="/contact us/contact.html" class="text-indigo-300 hover:text-indigo-400">Contact</a>
+          </div>
+       </div>
+       <div class="mt-6 text-center text-gray-400">
+          <p>&copy; 2025 Fluent Speech. All rights reserved.</p>
+       </div>
+    </div>
+ </footer>
+ 
 
   <!-- Modal -->
   <div aria-hidden="true" aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden" id="modal-booking" role="dialog" aria-live="assertive" aria-describedby="modal-desc">
@@ -407,222 +408,6 @@
    </div>
   </div>
 
-  <script>
-   // Mobile menu toggle
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    menuBtn.addEventListener('click', () => {
-      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', !expanded);
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Filter therapists by specialty
-    const filterSelect = document.getElementById('filter-specialty');
-    const therapistCards = Array.from(document.querySelectorAll('.therapist-card'));
-
-    filterSelect.addEventListener('change', () => {
-      const selected = filterSelect.value;
-      therapistCards.forEach(card => {
-        if (selected === 'all' || card.dataset.specialty === selected) {
-          card.classList.remove('hidden');
-          card.setAttribute('tabindex', '0');
-          card.querySelector('.book-btn').classList.add('pulse');
-        } else {
-          card.classList.add('hidden');
-          card.setAttribute('tabindex', '-1');
-          card.querySelector('.book-btn').classList.remove('pulse');
-        }
-      });
-    });
-
-    // Modal elements
-    const modal = document.getElementById('modal-booking');
-    const modalCloseBtn = document.getElementById('modal-close-btn');
-    const modalCancelBtn = document.getElementById('modal-cancel-btn');
-    const therapistInfo = document.getElementById('modal-desc');
-    const bookingForm = document.getElementById('booking-form');
-    const bookButtons = document.querySelectorAll('.book-btn');
-    let activeButton = null;
-
-    // Toast elements
-    const toast = document.getElementById('toast-success');
-    const toastCloseBtn = document.getElementById('toast-close-btn');
-
-    // Open modal and populate therapist info
-    bookButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        activeButton = button;
-        const name = button.dataset.name;
-        const specialty = button.dataset.specialty;
-        therapistInfo.textContent = `Booking a consultation with ${name} (${specialty}). Please fill in your details below.`;
-        modal.classList.remove('hidden');
-        modal.setAttribute('aria-hidden', 'false');
-        button.setAttribute('aria-expanded', 'true');
-        // Reset form
-        bookingForm.reset();
-        clearErrors();
-        // Set min date to today
-        const dateInput = bookingForm.querySelector('#date');
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.setAttribute('min', today);
-        // Focus first input
-        bookingForm.querySelector('#name').focus();
-        trapFocus(modal);
-      });
-    });
-
-    // Close modal function
-    function closeModal() {
-      modal.classList.add('hidden');
-      modal.setAttribute('aria-hidden', 'true');
-      if (activeButton) {
-        activeButton.setAttribute('aria-expanded', 'false');
-        activeButton.focus();
-        activeButton = null;
-      }
-      releaseFocus();
-    }
-
-    modalCloseBtn.addEventListener('click', closeModal);
-    modalCancelBtn.addEventListener('click', closeModal);
-
-    // Close modal on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        e.preventDefault();
-        closeModal();
-      }
-    });
-
-    // Form validation helpers
-    function showError(input, errorId) {
-      const errorEl = document.getElementById(errorId);
-      errorEl.classList.remove('hidden');
-      input.setAttribute('aria-invalid', 'true');
-    }
-    function hideError(input, errorId) {
-      const errorEl = document.getElementById(errorId);
-      errorEl.classList.add('hidden');
-      input.removeAttribute('aria-invalid');
-    }
-    function clearErrors() {
-      ['name', 'email', 'date', 'time'].forEach(field => {
-        hideError(bookingForm.querySelector(`#${field}`), `${field}-error`);
-      });
-    }
-
-    // Email validation regex
-    function isValidEmail(email) {
-      // Simple email regex
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    // Form submission
-    bookingForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      clearErrors();
-      let valid = true;
-
-      const nameInput = bookingForm.querySelector('#name');
-      const emailInput = bookingForm.querySelector('#email');
-      const dateInput = bookingForm.querySelector('#date');
-      const timeInput = bookingForm.querySelector('#time');
-
-      if (!nameInput.value.trim()) {
-        showError(nameInput, 'name-error');
-        valid = false;
-      }
-      if (!emailInput.value.trim() || !isValidEmail(emailInput.value.trim())) {
-        showError(emailInput, 'email-error');
-        valid = false;
-      }
-      if (!dateInput.value) {
-        showError(dateInput, 'date-error');
-        valid = false;
-      } else {
-        const selectedDate = new Date(dateInput.value);
-        const today = new Date();
-        today.setHours(0,0,0,0);
-        if (selectedDate < today) {
-          showError(dateInput, 'date-error');
-          valid = false;
-        }
-      }
-      if (!timeInput.value) {
-        showError(timeInput, 'time-error');
-        valid = false;
-      }
-
-      if (!valid) {
-        return;
-      }
-
-      // Simulate booking process with loading spinner on button
-      const submitBtn = bookingForm.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `<svg class="animate-spin h-5 w-5 mr-2 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>Booking...`;
-
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Confirm Booking';
-        closeModal();
-        showToast();
-      }, 2000);
-    });
-
-    // Toast functions
-    function showToast() {
-      toast.classList.remove('hidden');
-      toast.style.opacity = '1';
-      toast.focus();
-      setTimeout(() => {
-        fadeOutToast();
-      }, 5000);
-    }
-    function fadeOutToast() {
-      toast.style.opacity = '0';
-      setTimeout(() => {
-        toast.classList.add('hidden');
-      }, 500);
-    }
-    toastCloseBtn.addEventListener('click', () => {
-      fadeOutToast();
-    });
-
-    // Focus trap for modal
-    let focusableElementsString = 'a[href], area[href], input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
-    let firstTabStop = null;
-    let lastTabStop = null;
-
-    function trapFocus(element) {
-      const focusableElements = element.querySelectorAll(focusableElementsString);
-      if (focusableElements.length === 0) return;
-      firstTabStop = focusableElements[0];
-      lastTabStop = focusableElements[focusableElements.length - 1];
-      element.addEventListener('keydown', trapTabKey);
-    }
-
-    function trapTabKey(e) {
-      if (e.key === 'Tab') {
-        if (e.shiftKey) {
-          if (document.activeElement === firstTabStop) {
-            e.preventDefault();
-            lastTabStop.focus();
-          }
-        } else {
-          if (document.activeElement === lastTabStop) {
-            e.preventDefault();
-            firstTabStop.focus();
-          }
-        }
-      }
-    }
-
-    function releaseFocus() {
-      modal.removeEventListener('keydown', trapTabKey);
-    }
-  </script>
+  <script src="Coach_menu.js"></script>
  </body>
 </html>
