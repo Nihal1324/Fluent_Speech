@@ -1,0 +1,476 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Fluent Speech - Breathing Exercises with Live Guide
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+  <header class="bg-blue-600 text-white shadow-md">
+   <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 class="text-2xl font-bold flex items-center space-x-3">
+     <i class="fas fa-wind fa-lg">
+     </i>
+     <span>
+      Fluent Speech
+     </span>
+    </h1>
+    <nav class="space-x-6 text-white text-sm font-semibold hidden md:flex">
+     <a class="hover:underline" href="#exercises">
+      Breathing Exercises
+     </a>
+    </nav>
+    <button aria-label="Toggle menu" class="md:hidden focus:outline-none focus:ring-2 focus:ring-white" id="menu-btn">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+   </div>
+   <nav class="hidden bg-blue-700 text-white px-6 py-4 space-y-3 md:hidden" id="mobile-menu">
+    <a class="block hover:underline" href="#exercises">
+     Breathing Exercises
+    </a>
+   </nav>
+  </header>
+  <main class="flex-grow container mx-auto px-6 py-10">
+   <section class="text-center max-w-3xl mx-auto mb-16">
+    <h2 class="text-4xl font-extrabold mb-4 text-blue-700">
+     Breathing Exercises
+    </h2>
+    <p class="text-lg text-gray-700">
+     Improve your speech fluency and calm your mind with these effective breathing exercises. Learn how to perform each exercise properly to maximize benefits. Use the live guide below to follow the breathing rhythm.
+    </p>
+   </section>
+   <section class="grid gap-10 md:grid-cols-2 lg:grid-cols-3" id="exercises">
+    <article aria-pressed="false" class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col cursor-pointer hover:shadow-lg transition-shadow duration-300" data-exercise="diaphragmatic" role="button" tabindex="0">
+     <img alt="Person sitting cross-legged on a yoga mat practicing diaphragmatic breathing with hands on stomach, calm indoor setting with soft natural light" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/cc072b5a-1ed2-4678-27c7-cc5775f8974c.jpg" width="600"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h3 class="text-xl font-semibold mb-2 text-blue-600">
+       Diaphragmatic Breathing
+      </h3>
+      <p class="text-gray-700 flex-grow">
+       Also known as belly breathing, this exercise helps you engage your diaphragm for deeper, more efficient breaths.
+      </p>
+     </div>
+    </article>
+    <article aria-pressed="false" class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col cursor-pointer hover:shadow-lg transition-shadow duration-300" data-exercise="box" role="button" tabindex="0">
+     <img alt="Close-up of a person’s face with eyes closed, practicing box breathing technique with calm expression, soft blurred background" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/2770d886-5b74-48db-2e43-1f44599eee90.jpg" width="600"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h3 class="text-xl font-semibold mb-2 text-blue-600">
+       Box Breathing
+      </h3>
+      <p class="text-gray-700 flex-grow">
+       A simple technique involving equal parts of inhaling, holding, exhaling, and holding again to reduce stress and improve focus.
+      </p>
+     </div>
+    </article>
+    <article aria-pressed="false" class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col cursor-pointer hover:shadow-lg transition-shadow duration-300" data-exercise="pursed" role="button" tabindex="0">
+     <img alt="Side profile of a person pursing lips and slowly exhaling, demonstrating pursed lip breathing outdoors with greenery in background" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/026a38ad-1253-480a-d65d-fa15ed786c5c.jpg" width="600"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h3 class="text-xl font-semibold mb-2 text-blue-600">
+       Pursed Lip Breathing
+      </h3>
+      <p class="text-gray-700 flex-grow">
+       Helps control shortness of breath by slowing your breathing rate and improving oxygen exchange.
+      </p>
+     </div>
+    </article>
+    <article aria-pressed="false" class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col cursor-pointer hover:shadow-lg transition-shadow duration-300" data-exercise="alternateNostril" role="button" tabindex="0">
+     <img alt="Person sitting cross-legged with eyes closed, performing alternate nostril breathing with thumb and ring finger closing nostrils, serene indoor environment" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/2cab1875-23eb-4a6b-ad6b-50b60706ea28.jpg" width="600"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h3 class="text-xl font-semibold mb-2 text-blue-600">
+       Alternate Nostril Breathing
+      </h3>
+      <p class="text-gray-700 flex-grow">
+       Balances the nervous system by alternating breaths through each nostril, promoting relaxation and mental clarity.
+      </p>
+     </div>
+    </article>
+    <article aria-pressed="false" class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col cursor-pointer hover:shadow-lg transition-shadow duration-300" data-exercise="fourSevenEight" role="button" tabindex="0">
+     <img alt="Close-up of a person inhaling deeply with eyes closed, practicing 4-7-8 breathing technique in a calm room with soft lighting" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/328dc154-2ca3-4cf8-5d10-066f8f696d60.jpg" width="600"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h3 class="text-xl font-semibold mb-2 text-blue-600">
+       4-7-8 Breathing
+      </h3>
+      <p class="text-gray-700 flex-grow">
+       A relaxing breathing pattern where you inhale for 4 seconds, hold for 7 seconds, and exhale for 8 seconds to reduce anxiety.
+      </p>
+     </div>
+    </article>
+    <article aria-pressed="false" class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col cursor-pointer hover:shadow-lg transition-shadow duration-300" data-exercise="resonant" role="button" tabindex="0">
+     <img alt="Person sitting comfortably with eyes closed, hands resting on knees, practicing resonant breathing in a peaceful outdoor garden" class="w-full h-48 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/ae97918c-9ca7-4cb0-a61e-87f0e862c41b.jpg" width="600"/>
+     <div class="p-6 flex flex-col flex-grow">
+      <h3 class="text-xl font-semibold mb-2 text-blue-600">
+       Resonant Breathing
+      </h3>
+      <p class="text-gray-700 flex-grow">
+       Breathing at a rate of about 5-7 breaths per minute to maximize heart rate variability and promote calmness.
+      </p>
+     </div>
+    </article>
+   </section>
+   <section aria-atomic="true" aria-live="polite" class="mt-20 max-w-4xl mx-auto" id="live-guide-section">
+    <h2 class="text-3xl font-extrabold mb-8 text-blue-700 text-center">
+     Live Breathing Guide
+    </h2>
+    <div class="bg-white rounded-lg shadow-md p-8 max-w-3xl mx-auto flex flex-col items-center">
+     <h3 class="text-2xl font-semibold mb-4 text-blue-600" id="live-exercise-name" tabindex="0">
+      Select a breathing exercise above to start
+     </h3>
+     <div class="text-center mb-6">
+      <div aria-atomic="true" aria-label="Timer" aria-live="assertive" class="text-6xl font-extrabold text-blue-700 mb-2" id="live-timer">
+       00
+      </div>
+      <div aria-label="Current action" class="text-xl font-semibold text-gray-700" id="live-action">
+       Waiting for selection...
+      </div>
+      <div aria-label="Cycle information" class="text-md font-medium text-gray-600 mt-1" id="live-instruction">
+       Select an exercise card above to see the live breathing guide.
+      </div>
+     </div>
+     <div class="flex space-x-4 mb-6">
+      <button aria-label="Start breathing exercise" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-md disabled:opacity-50 disabled:cursor-not-allowed" disabled="" id="start-btn">
+       Start
+      </button>
+      <button aria-label="Pause breathing exercise" class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-6 rounded-md disabled:opacity-50 disabled:cursor-not-allowed" disabled="" id="pause-btn">
+       Pause
+      </button>
+      <button aria-label="Reset breathing exercise" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-md disabled:opacity-50 disabled:cursor-not-allowed" disabled="" id="reset-btn">
+       Reset
+      </button>
+     </div>
+     <section class="w-full max-w-xl text-gray-700 text-lg" id="how-to">
+      <h4 class="text-2xl font-semibold mb-4 text-blue-700 text-center" id="how-to-title">
+       How to Perform
+      </h4>
+      <ol class="list-decimal list-inside space-y-2" id="how-to-steps">
+       <li>
+        Select a breathing exercise above to see instructions here.
+       </li>
+      </ol>
+     </section>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-blue-600 text-white py-6 mt-20">
+   <div class="container mx-auto px-6 text-center text-sm">
+    <p>
+     © 2024 Fluent Speech. All rights reserved.
+    </p>
+    <div class="mt-3 space-x-4 text-lg">
+     <a aria-label="Facebook" class="inline-block hover:text-gray-300" href="https://facebook.com">
+      <i class="fab fa-facebook-f">
+      </i>
+     </a>
+     <a aria-label="Twitter" class="inline-block hover:text-gray-300" href="https://twitter.com">
+      <i class="fab fa-twitter">
+      </i>
+     </a>
+     <a aria-label="Instagram" class="inline-block hover:text-gray-300" href="https://instagram.com">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   const menuBtn = document.getElementById('menu-btn');
+   const mobileMenu = document.getElementById('mobile-menu');
+
+   menuBtn.addEventListener('click', () => {
+     mobileMenu.classList.toggle('hidden');
+   });
+
+   // Breathing exercise definitions with steps and durations (seconds) and instructions
+   const exercises = {
+     diaphragmatic: {
+       name: "Diaphragmatic Breathing",
+       steps: [
+         { action: "Inhale deeply through your nose", duration: 4 },
+         { action: "Hold your breath", duration: 2 },
+         { action: "Exhale slowly through pursed lips", duration: 6 },
+         { action: "Hold your breath", duration: 2 }
+       ],
+       cycles: 6,
+       instructions: [
+         "Sit or lie down comfortably with one hand on your chest and the other on your belly.",
+         "Inhale deeply through your nose, allowing your belly to rise while keeping your chest still.",
+         "Exhale slowly through pursed lips, feeling your belly fall.",
+         "Repeat for 5-10 minutes daily."
+       ]
+     },
+     box: {
+       name: "Box Breathing",
+       steps: [
+         { action: "Inhale slowly through your nose", duration: 4 },
+         { action: "Hold your breath", duration: 4 },
+         { action: "Exhale slowly through your mouth", duration: 4 },
+         { action: "Hold your breath", duration: 4 }
+       ],
+       cycles: 4,
+       instructions: [
+         "Inhale slowly through your nose for a count of 4 seconds.",
+         "Hold your breath for 4 seconds.",
+         "Exhale slowly through your mouth for 4 seconds.",
+         "Hold your breath again for 4 seconds.",
+         "Repeat this cycle 4-5 times."
+       ]
+     },
+     pursed: {
+       name: "Pursed Lip Breathing",
+       steps: [
+         { action: "Inhale slowly through your nose", duration: 2 },
+         { action: "Exhale slowly through pursed lips", duration: 4 }
+       ],
+       cycles: 8,
+       instructions: [
+         "Inhale slowly through your nose for 2 seconds.",
+         "Purse your lips as if you’re going to whistle.",
+         "Exhale slowly and gently through pursed lips for 4 seconds.",
+         "Repeat for several minutes."
+       ]
+     },
+     alternateNostril: {
+       name: "Alternate Nostril Breathing",
+       steps: [
+         { action: "Close right nostril and inhale through left", duration: 4 },
+         { action: "Close left nostril and exhale through right", duration: 4 },
+         { action: "Inhale through right nostril", duration: 4 },
+         { action: "Close right nostril and exhale through left", duration: 4 }
+       ],
+       cycles: 5,
+       instructions: [
+         "Sit comfortably with your spine straight.",
+         "Use your right thumb to close your right nostril.",
+         "Inhale deeply through your left nostril.",
+         "Close your left nostril with your ring finger and release your right nostril.",
+         "Exhale slowly through your right nostril.",
+         "Inhale through your right nostril, then close it and exhale through your left nostril.",
+         "Repeat this cycle for 5-10 minutes."
+       ]
+     },
+     fourSevenEight: {
+       name: "4-7-8 Breathing",
+       steps: [
+         { action: "Exhale completely through your mouth", duration: 4 },
+         { action: "Inhale quietly through your nose", duration: 4 },
+         { action: "Hold your breath", duration: 7 },
+         { action: "Exhale completely through your mouth", duration: 8 }
+       ],
+       cycles: 4,
+       instructions: [
+         "Exhale completely through your mouth, making a whoosh sound.",
+         "Close your mouth and inhale quietly through your nose for 4 seconds.",
+         "Hold your breath for 7 seconds.",
+         "Exhale completely through your mouth for 8 seconds, making a whoosh sound.",
+         "Repeat the cycle 4 times initially, then increase as comfortable."
+       ]
+     },
+     resonant: {
+       name: "Resonant Breathing",
+       steps: [
+         { action: "Inhale slowly and deeply through your nose", duration: 6 },
+         { action: "Exhale slowly through your nose", duration: 6 }
+       ],
+       cycles: 10,
+       instructions: [
+         "Sit or lie down comfortably.",
+         "Inhale slowly and deeply through your nose for about 5-6 seconds.",
+         "Exhale slowly through your nose for about 5-6 seconds.",
+         "Maintain a steady rhythm of about 5-7 breaths per minute.",
+         "Practice for 10-20 minutes daily."
+       ]
+     }
+   };
+
+   // Elements for live guide
+   const liveExerciseName = document.getElementById('live-exercise-name');
+   const liveTimer = document.getElementById('live-timer');
+   const liveAction = document.getElementById('live-action');
+   const liveInstruction = document.getElementById('live-instruction');
+   const startBtn = document.getElementById('start-btn');
+   const pauseBtn = document.getElementById('pause-btn');
+   const resetBtn = document.getElementById('reset-btn');
+   const howToTitle = document.getElementById('how-to-title');
+   const howToSteps = document.getElementById('how-to-steps');
+
+   let currentExercise = null;
+   let currentCycle = 0;
+   let currentStepIndex = 0;
+   let timer = null;
+   let timeLeft = 0;
+   let isRunning = false;
+
+   // Format seconds to MM:SS or SS
+   function formatTime(seconds) {
+     return seconds < 10 ? `0${seconds}` : seconds;
+   }
+
+   // Update the live guide display
+   function updateDisplay() {
+     liveTimer.textContent = formatTime(timeLeft);
+     if(currentExercise) {
+       liveAction.textContent = currentExercise.steps[currentStepIndex].action;
+       liveInstruction.textContent = `Cycle ${currentCycle + 1} of ${currentExercise.cycles}`;
+     } else {
+       liveAction.textContent = "Waiting for selection...";
+       liveTimer.textContent = "00";
+       liveInstruction.textContent = "Select an exercise card above to see the live breathing guide.";
+     }
+   }
+
+   // Timer tick function
+   function tick() {
+     if(timeLeft > 0) {
+       timeLeft--;
+       updateDisplay();
+     } else {
+       // Step finished, move to next step or cycle
+       currentStepIndex++;
+       if(currentStepIndex >= currentExercise.steps.length) {
+         currentCycle++;
+         if(currentCycle >= currentExercise.cycles) {
+           // Finished all cycles
+           stopTimer();
+           liveAction.textContent = "Exercise complete! Well done.";
+           liveInstruction.textContent = "Select another exercise or restart.";
+           liveTimer.textContent = "00";
+           startBtn.disabled = false;
+           pauseBtn.disabled = true;
+           resetBtn.disabled = false;
+           return;
+         } else {
+           currentStepIndex = 0;
+         }
+       }
+       timeLeft = currentExercise.steps[currentStepIndex].duration;
+       updateDisplay();
+     }
+   }
+
+   // Start the timer
+   function startTimer() {
+     if(!currentExercise) return;
+     if(isRunning) return;
+     if(timeLeft === 0) {
+       currentCycle = 0;
+       currentStepIndex = 0;
+       timeLeft = currentExercise.steps[0].duration;
+     }
+     isRunning = true;
+     startBtn.disabled = true;
+     pauseBtn.disabled = false;
+     resetBtn.disabled = false;
+     updateDisplay();
+     timer = setInterval(tick, 1000);
+   }
+
+   // Pause the timer
+   function pauseTimer() {
+     if(!isRunning) return;
+     isRunning = false;
+     clearInterval(timer);
+     startBtn.disabled = false;
+     pauseBtn.disabled = true;
+     resetBtn.disabled = false;
+   }
+
+   // Stop and reset the timer
+   function resetTimer() {
+     isRunning = false;
+     clearInterval(timer);
+     if(currentExercise) {
+       currentCycle = 0;
+       currentStepIndex = 0;
+       timeLeft = 0;
+       updateDisplay();
+     }
+     startBtn.disabled = false;
+     pauseBtn.disabled = true;
+     resetBtn.disabled = true;
+   }
+
+   // Stop timer helper
+   function stopTimer() {
+     isRunning = false;
+     clearInterval(timer);
+   }
+
+   // Render instructions for selected exercise
+   function renderInstructions(instructions) {
+     howToSteps.innerHTML = '';
+     if(instructions && instructions.length > 0) {
+       instructions.forEach(step => {
+         const li = document.createElement('li');
+         li.textContent = step;
+         howToSteps.appendChild(li);
+       });
+     } else {
+       const li = document.createElement('li');
+       li.textContent = 'No instructions available.';
+       howToSteps.appendChild(li);
+     }
+   }
+
+   // Select an exercise
+   function selectExercise(key) {
+     if(!exercises[key]) return;
+     currentExercise = exercises[key];
+     currentCycle = 0;
+     currentStepIndex = 0;
+     timeLeft = 0;
+     isRunning = false;
+     clearInterval(timer);
+     liveExerciseName.textContent = currentExercise.name;
+     liveAction.textContent = "Ready to start";
+     liveTimer.textContent = "00";
+     liveInstruction.textContent = `This exercise has ${currentExercise.cycles} cycle${currentExercise.cycles > 1 ? 's' : ''}. Press Start to begin.`;
+     startBtn.disabled = false;
+     pauseBtn.disabled = true;
+     resetBtn.disabled = true;
+     startBtn.focus();
+     // Update aria-pressed for all cards
+     document.querySelectorAll('#exercises article').forEach(card => {
+       card.setAttribute('aria-pressed', card.getAttribute('data-exercise') === key ? 'true' : 'false');
+     });
+     // Render instructions for selected exercise
+     renderInstructions(currentExercise.instructions);
+   }
+
+   // Add event listeners to exercise cards
+   document.querySelectorAll('#exercises article').forEach(card => {
+     card.addEventListener('click', () => {
+       selectExercise(card.getAttribute('data-exercise'));
+       window.scrollTo({ top: document.getElementById('live-guide-section').offsetTop - 20, behavior: 'smooth' });
+     });
+     card.addEventListener('keydown', e => {
+       if(e.key === 'Enter' || e.key === ' ') {
+         e.preventDefault();
+         selectExercise(card.getAttribute('data-exercise'));
+         window.scrollTo({ top: document.getElementById('live-guide-section').offsetTop - 20, behavior: 'smooth' });
+       }
+     });
+   });
+
+   // Button event listeners
+   startBtn.addEventListener('click', () => {
+     startTimer();
+   });
+   pauseBtn.addEventListener('click', () => {
+     pauseTimer();
+   });
+   resetBtn.addEventListener('click', () => {
+     resetTimer();
+   });
+  </script>
+ </body>
+</html>
