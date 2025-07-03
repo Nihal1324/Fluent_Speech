@@ -1,0 +1,231 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Fluent Speech - Real Time Speech Analysis
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet" />
+    <link rel="icon" href="/assets/logo2.png" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f3f4f6] min-h-screen flex flex-col">
+    <header class="bg-gradient-to-r from-[#2563eb] via-[#38bdf8] to-[#1e40af] text-white border-b border-gray-200 shadow-sm sticky top-0 z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <div class="flex items-center space-x-3">
+                <img alt="Fluent Speech logo, stylized FS letters in blue and white" class="h-10 w-10 rounded-full"
+                    height="40" src="/assets/logo3.svg";
+                    width="40" />
+                <h1 class="text-2xl font-semibold text-white">
+                    Fluent Speech
+                </h1>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-white font-medium">
+    <a class="text-white hover:text-white transition" href="/index.html">
+        Home
+    </a>
+    <a class="text-white hover:text-white transition" href="/featuresPage/features.html">
+        Features
+    </a>
+    
+    <a class="text-white hover:text-white transition" href="/aboutUS/AboutUs.html">
+        About
+    </a>
+    <a class="text-white hover:text-white transition" href="/contact us/contact.html">
+        Contact
+    </a>
+</nav>
+
+            <button aria-label="Open menu"
+                class="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600"
+                id="mobile-menu-button">
+                <i class="fas fa-bars fa-lg">
+                </i>
+            </button>
+        </div>
+        <nav aria-label="Mobile menu" class="md:hidden bg-white border-t border-gray-200 hidden" id="mobile-menu">
+            <a class="block px-4 py-3 text-white hover:bg-gray-100 hover:text-white" href="/index.html">
+                Home
+            </a>
+            <a class="block px-4 py-3 text-white hover:bg-gray-100 hover:text-white" href="/featuresPage/features.html">
+                Features
+            </a>
+
+            <a class="block px-4 py-3 text-white hover:bg-gray-100 hover:text-white " href="/aboutUS/AboutUs.html">
+                About
+            </a>
+            <a class="block px-4 py-3 text-white hover:bg-gray-100 hover:text-white " href="/contact us/contact.html">
+                Contact
+            </a>
+        </nav>
+    </header>
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-8 text-center">
+            Real-Time Speech Analysis
+        </h2>
+        <!-- User Instructions Section -->
+        <section class="mb-8 text-center">
+            <p class="text-lg text-gray-700">
+                To get started, click the microphone button and speak clearly. Your speech will be analyzed in real-time.
+            </p>
+        </section>
+        <section aria-label="Speech prompt and analysis interface"
+            class="bg-white rounded-lg shadow-md p-6 max-w-5xl mx-auto flex flex-col md:flex-row md:space-x-10">
+
+            <div class="md:w-1/2 flex flex-col items-center space-y-6">
+                <img alt="A scenic mountain landscape with a calm lake reflecting the peaks under a clear blue sky"
+                    class="rounded-lg shadow-md w-full max-w-md object-cover" height="400" id="prompt-image"
+                    loading="lazy"
+                    src="https://storage.googleapis.com/a1aa/image/c21be917-55ae-49a2-851d-c89da403e756.jpg"
+                    width="600" />
+                <div class="bg-blue-50 border border-blue-300 rounded-md p-4 w-full max-w-md text-center">
+                    <p class="text-xl font-semibold text-blue-700" id="prompt-title">
+                        Speak about this scene:
+                    </p>
+                    <p class="mt-2 text-gray-800 text-lg italic" id="prompt-text">
+                        Describe the emotions and thoughts this mountain landscape evokes in you.
+                    </p>
+                </div>
+                <button aria-label="Change prompt and image"
+                    class="mt-4 px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md shadow-md transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    id="change-prompt-btn" type="button">
+                    Change Prompt
+                </button>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0 flex flex-col space-y-6">
+                <div aria-label="Start or stop speech recognition"
+                    class="w-32 h-32 rounded-full bg-blue-600 flex items-center justify-center cursor-pointer hover:bg-blue-700 transition relative self-center"
+                    id="mic-button" role="button" tabindex="0">
+                    <i class="fas fa-microphone fa-3x text-white">
+                    </i>
+                    <div class="absolute inset-0 rounded-full border-4 border-blue-400 opacity-0 pointer-events-none"
+                        id="mic-ripple">
+                    </div>
+                </div>
+                <div aria-atomic="true" aria-label="Live speech transcript" aria-live="polite"
+                    class="bg-gray-100 rounded-md p-4 h-48 overflow-y-auto border border-gray-300"
+                    id="transcript-container">
+                    <p class="text-gray-800 text-lg leading-relaxed" id="transcript">
+                        Your speech transcript will appear here in real time...
+                    </p>
+                </div>
+                <div aria-label="Speech analysis results" class="bg-gray-100 rounded-md p-4 border border-gray-300"
+                    id="analysis-container">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">
+                        Live User Speech Details :
+                    </h3>
+                    <ul class="space-y-2 text-gray-700 text-center">
+                        <li>
+                            <span class="font-semibold">
+                                Words per minute:
+                            </span>
+                            <span id="wpm">
+                                0
+                            </span>
+                        </li>
+                        <li>
+                            <span class="font-semibold">
+                                Filler words detected:
+                            </span>
+                            <span id="fillers">
+                                0
+                            </span>
+                        </li>
+                        <li>
+                            <span class="font-semibold">
+                                Longest pause:
+                            </span>
+                            <span id="longest-pause">
+                                0.0s
+                            </span>
+                        </li>
+                        <li>
+                            <span class="font-semibold">
+                                Confidence level:
+                            </span>
+                            <span id="confidence">
+                                N/A
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div id="speech-review" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div id="clarity-card" class="p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+                <h3 class="font-bold text-lg text-blue-600 mb-2">Clarity</h3>
+                <p class="text-gray-700" id="clarity-text">Waiting...</p>
+            </div>
+            <div id="structure-card" class="p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+                <h3 class="font-bold text-lg text-purple-600 mb-2">Structure & Flow</h3>
+                <p class="text-gray-700" id="structure-text">Waiting...</p>
+            </div>
+            <div id="filler-card" class="p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+                <h3 class="font-bold text-lg text-pink-600 mb-2">Filler Words</h3>
+                <p class="text-gray-700" id="filler-text">Waiting...</p>
+            </div>
+            <div id="enthusiasm-card" class="p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+                <h3 class="font-bold text-lg text-yellow-600 mb-2">Enthusiasm</h3>
+                <p class="text-gray-700" id="enthusiasm-text">Waiting...</p>
+            </div>
+            <div id="suggestions-card" class="p-4 bg-white rounded-xl shadow hover:shadow-lg transition md:col-span-2">
+                <h3 class="font-bold text-lg text-green-600 mb-2">Suggestions for Improvement</h3>
+                <p class="text-gray-700" id="suggestions-text">Waiting...</p>
+            </div>
+            <div id="score-card" class="p-6 bg-blue-100 rounded-2xl text-center md:col-span-2 shadow-inner">
+                <h3 class="font-bold text-2xl text-blue-700">Overall Score</h3>
+                <p id="score-text" class="text-4xl text-blue-900 font-extrabold mt-2">- /10</p>
+            </div>
+        </div>
+        
+        <!-- Loading and retry -->
+        <div id="review-loading" class="mt-4 hidden animate-pulse text-blue-500">Analyzing your speech...</div>
+        <button id="retryBtn" class="hidden mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+            Retry Review
+        </button>
+        <div id="loading" class="hidden">
+            <p>Loading...</p>
+          </div>
+          
+        
+    </main>
+    <footer class="bg-gradient-to-r from-[#2563eb] via-[#38bdf8] to-[#1e40af] text-white py-6 mt-12 border-t border-sky-200">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-white text-sm">
+            <p>
+                © 2024 Fluent Speech. All rights reserved.
+            </p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a aria-label="Facebook" class="hover:text-white transition" href="#">
+                    <i class="fab fa-facebook fa-lg">
+                    </i>
+                </a>
+                <a aria-label="Twitter" class="hover:text- white transition" href="#">
+                    <i class="fab fa-twitter fa-lg">
+                    </i>
+                </a>
+                <a aria-label="LinkedIn" class="hover:text-white transition" href="#">
+                    <i class="fab fa-linkedin fa-lg">
+                    </i>
+                </a>
+                <a aria-label="Instagram" class="hover:text-white transition" href="#">
+                    <i class="fab fa-instagram fa-lg">
+                    </i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="/realtime speech analysis/Rts.js" defer></script>
+
+</body>
+
+</html>
