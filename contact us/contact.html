@@ -16,47 +16,36 @@
     }
   </style>
  </head>
- <body class="bg-gray-50 min-h-screen flex flex-col">
-  <header class="bg-white shadow">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center py-6">
-      
-     <a class="text-2xl font-bold text-indigo-600" href="#">
-      Fluent Speech
-     </a>
-     <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
-      <a class="hover:text-indigo-600 transition" href="/HomePage/index.html">
-       Home
-      </a>
-      <a class="hover:text-indigo-600 transition" href="/aboutUS/AboutUs.html">
-       About
-      </a>
-      <a class="hover:text-indigo-600 transition" href="/featuresPage/features.html">
-       Services
-      </a>
-      
-     </nav>
-     <button aria-label="Open menu" class="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600" id="mobile-menu-button">
-      <i class="fas fa-bars fa-lg">
-      </i>
-     </button>
+ <body class="bg-[#f3f4f6] min-h-screen flex flex-col">
+   <header class="bg-gradient-to-r from-[#2563eb] via-[#38bdf8] to-[#1e40af] text-white border-b border-gray-200 shadow-md sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="flex justify-between items-center py-4">
+          <a class="flex items-center space-x-2 text-2xl font-bold text-white" href="#" aria-label="Go to homepage">
+             <img src="/HomePage/assets/logo3.svg" alt="Fluent Speech Logo" class="h-10 w-10 object-contain" />
+             <span>Fluent Speech</span>
+          </a>
+          <nav class="hidden md:flex space-x-8 text-white font-medium" role="navigation">
+             <a class="hover:text-indigo-300 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/HomePage/index.html">
+                Home
+             </a>
+             <a class="hover:text-indigo-300 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/aboutUS/AboutUs.html">
+                About
+             </a>
+             <a class="hover:text-indigo-300 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/Coach_consultation/consultation_Page.html" aria-current="page">
+                Consultation
+             </a>
+             <a class="hover:text-indigo-300 transition focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" href="/contact us/contact.html">
+                Contact
+             </a>
+          </nav>
+          <div class="md:hidden">
+             <button aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded" id="menu-btn" type="button">
+                <i class="fas fa-bars fa-lg" aria-hidden="true"></i>
+             </button>
+          </div>
+       </div>
     </div>
-   </div>
-   <div class="hidden md:hidden bg-white border-t border-gray-200" id="mobile-menu">
-    <nav class="px-4 py-4 space-y-1">
-     <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600" href="/HomePage/index.html">
-      Home
-     </a>
-     <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600" href="/aboutUS/AboutUs.html">
-      About
-     </a>
-     <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600" href="/featuresPage/features.html">
-      Services
-     </a>
-     
-    </nav>
-   </div>
-  </header>
+ </header>
   <main class="flex-grow">
    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="text-center max-w-3xl mx-auto mb-12">
@@ -188,27 +177,43 @@
     </div>
    </section>
   </main>
-  <footer class="bg-white border-t border-gray-200">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
-    <p>
-     © 2024 CompanyName. All rights reserved.
-    </p>
+  <footer class="bg-gradient-to-r from-[#2563eb] via-[#38bdf8] to-[#1e40af] text-white border-t border-gray-200 shadow-sm ">
+   <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between items-center text-white text-sm"
+   >
+    <p>© 2024 Fluent Speech. All rights reserved.</p>
     <div class="flex space-x-6 mt-4 md:mt-0">
-     <a aria-label="Facebook" class="hover:text-indigo-600" href="#">
-      <i class="fab fa-facebook-f fa-lg">
-      </i>
+     <a
+      aria-label="Facebook"
+      class="social-icon hover:text-blue-600 focus:text-blue-600 focus:outline-none"
+      href="#"
+      tabindex="0"
+     >
+      <i class="fab fa-facebook-f fa-lg"></i>
      </a>
-     <a aria-label="Twitter" class="hover:text-indigo-600" href="#">
-      <i class="fab fa-twitter fa-lg">
-      </i>
+     <a
+      aria-label="Twitter"
+      class="social-icon hover:text-blue-600 focus:text-blue-600 focus:outline-none"
+      href="#"
+      tabindex="0"
+     >
+      <i class="fab fa-twitter fa-lg"></i>
      </a>
-     <a aria-label="LinkedIn" class="hover:text-indigo-600" href=" https://www.linkedin.com/in/nihal-malviya/">
-      <i class="fab fa-linkedin-in fa-lg">
-      </i>
+     <a
+      aria-label="Instagram"
+      class="social-icon hover:text-blue-600 focus:text-blue-600 focus:outline-none"
+      href="#"
+      tabindex="0"
+     >
+      <i class="fab fa-instagram fa-lg"></i>
      </a>
-     <a aria-label="Instagram" class="hover:text-indigo-600" href="#">
-      <i class="fab fa-instagram fa-lg">
-      </i>
+     <a
+      aria-label="LinkedIn"
+      class="social-icon hover:text-blue-600 focus:text-blue-600 focus:outline-none"
+      href="https://www.linkedin.com/in/nihal-malviya/"
+      tabindex="0"
+     >
+      <i class="fab fa-linkedin-in fa-lg"></i>
      </a>
     </div>
    </div>
