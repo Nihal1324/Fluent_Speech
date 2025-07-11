@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Therapy Assistant Chatbot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for chatbot UI */
+        .chatbot-container {
+            max-width: 800px;
+            margin: 0 auto;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .chatbot-header {
+            background-color: #6c63ff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .message {
+            max-width: 70%;
+            padding: 12px 18px;
+            border-radius: 12px;
+            line-height: 1.5;
+            font-size: 1rem;
+        }
+        .user-message {
+            background-color: #ffffff;
+            align-self: flex-end;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .bot-message {
+            background-color: #f0f9ff;
+            align-self: flex-start;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .chatbot-input {
+            padding: 20px;
+            background-color: #ffffff;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 10px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+        }
+        #userInput {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        #userInput:focus {
+            border-color: #6c63ff;
+        }
+        #sendButton {
+            background-color: #6c63ff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        #sendButton:hover {
+            background-color: #5448c8;
+            transform: scale(1.05);
+        }
+        .welcome-message {
+            text-align: center;
+            color: #333;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <div class="chatbot-container mt-6">
+            <div class="chatbot-header">Nimo - Speech Therapy Coach</div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="welcome-message">
+                    <p>Hello! I'm Nimo, your Speech Therapy Coach. I'm here to help respectfully with any speech challenges or other concerns you have. Just type your issue below, and I'll do my best to assist you!</p>
+                </div>
+                <!-- Messages will be added here dynamically -->
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Type your message here..." />
+                <button id="sendButton">Send</button>
+                <button id="quickHelpButton" class="bg-blue-500 text-white border-none px-4 py-2 rounded-lg text-base font-bold cursor-pointer transition duration-300 hover:bg-blue-600 hover:scale-105">Quick Help</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chatbot logic
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendButton');
+
+        // Function to add a message to the chat
+        function addMessage(text, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', type);
+            messageDiv.innerHTML = `<p>${text}</p>`;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        // Fallback function for static responses if API fails
+        function getFallbackResponse(userText) {
+            const text = userText.toLowerCase();
+            if (text.includes('speech problem') || text.includes('difficulty speaking')) {
+                return "I'm happy to help with your speech challenge. Try this effective exercise: practice speaking short sentences slowly for 5 minutes daily to build confidence and clarity. Repeat this consistently to see improvement.";
+            } else if (text.includes('stutter') || text.includes('stuttering')) {
+                return "I’m here to support you with stuttering. Use this proven technique: take a deep breath before speaking and slow your pace by pausing briefly between words. Practice this for 10 minutes each day to reduce fluency issues.";
+            } else if (text.includes('pronunciation') || text.includes('sound')) {
+                return "Let's improve your pronunciation with a practical method: break difficult words into syllables, say them slowly 5 times each, and record yourself to track progress. Do this daily with 3-5 words for steady improvement.";
+            } else if (text.includes('child') || text.includes('kid')) {
+                return "I’d be glad to help with your child’s speech. Implement this effective strategy: spend 10 minutes daily reading simple stories together, encouraging them to repeat words after you to build vocabulary and confidence.";
+            } else if (text.includes('thank you') || text.includes('thanks')) {
+                return "You're welcome! I'm here for any further assistance you might need.";
+            } else if (text.includes('detail') || text.includes('explain') || text.includes('more')) {
+                return "I’m happy to provide more details. Here's a deeper insight: speech improvement often requires consistent daily practice of targeted exercises. Try setting a 5-minute daily routine to see measurable progress.";
+            } else {
+                return "Thanks for sharing. Here's a helpful solution: focus on clear communication by practicing breathing exercises for 5 minutes daily to calm nerves and improve speech flow. Repeat this routine for best results.";
+            }
+        }
+
+        // Function to get AI response from Gemini API
+        async function getAIResponse(userText) {
+            // Replace 'YOUR_GEMINI_API_KEY' with your actual Gemini API key
+            // IMPORTANT: In a production environment, do not hardcode API keys. Use environment variables or a secure backend proxy.
+            const apiKey = 'AIzaSyDmCVhkghMGdJoRoNPL8IoblwUM-8enwU4'; // Replace this with your key securely
+            const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+            
+            // Prepare the request payload with the user's message
+            // Note: System instructions might not be supported in this API version, combining with user prompt as a workaround
+            const requestBody = {
+                contents: [
+                    {
+                        role: "user",
+                        parts: [{
+                            text: "You are Nimo, a friendly speech therapy coach. Help users respectfully by providing direct, effective solutions to speech challenges or any concerns, offering practical, actionable advice tailored to their situation in concise responses (2-3 sentences) without asking for more information unless absolutely necessary or when they request detailed explanations with words like 'detail', 'explain', or 'more'. Maintain a supportive tone and focus on delivering proven techniques or strategies that address their problem immediately.\n\nUser query: " + userText
+                        }]
+                    }
+                ],
+                generationConfig: {
+                    temperature: 0.7,
+                    topP: 0.95,
+                    topK: 40,
+                    maxOutputTokens: 250, // Slightly increased to allow for detailed solutions
+                    responseMimeType: "text/plain"
+                }
+            };
+
+            try {
+                console.log('Sending request to Gemini API...');
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestBody)
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`API request failed with status ${response.status}: ${response.statusText}\nDetails: ${errorText}`);
+                }
+
+                const data = await response.json();
+                console.log('API response received:', data);
+                // Extract and return the AI's response text, handling potential structure variations
+                const candidate = data.candidates && data.candidates[0];
+                const content = candidate && candidate.content;
+                const parts = content && content.parts;
+                const text = parts && parts[0] && parts[0].text;
+                return text || "I'm sorry, I couldn't generate a response. Please try again.";
+            } catch (error) {
+                console.error('Error fetching Gemini API:', error.message);
+                // Fallback to static response if API call fails
+                return getFallbackResponse(userText);
+            }
+        }
+
+        // Event listener for sending messages
+        sendButton.addEventListener('click', async () => {
+            const userText = userInput.value.trim();
+            if (userText) {
+                addMessage(userText, 'user-message');
+                userInput.value = '';
+                // Disable input and button while fetching response
+                userInput.disabled = true;
+                sendButton.disabled = true;
+                sendButton.textContent = 'Thinking...';
+                
+                try {
+                    const aiResponse = await getAIResponse(userText);
+                    addMessage(aiResponse, 'bot-message');
+                } finally {
+                    // Re-enable input and button after response
+                    userInput.disabled = false;
+                    sendButton.disabled = false;
+                    sendButton.textContent = 'Send';
+                    userInput.focus();
+                }
+            }
+        });
+
+        // Allow sending message with Enter key
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendButton.click();
+            }
+        });
+
+        // Quick Help button functionality to show predefined topics
+        const quickHelpButton = document.getElementById('quickHelpButton');
+        quickHelpButton.addEventListener('click', () => {
+            const helpMessage = "Here are some common topics I can help with. Feel free to ask about these or anything else:<br>- Stuttering or fluency issues<br>- Pronunciation or sounds<br>- Child’s speech development<br>- Voice concerns (pitch, hoarseness)<br>- Any other concerns or issues<br>What would you like assistance with?";
+            addMessage(helpMessage, 'bot-message');
+        });
+    </script>
+</body>
+</html>
