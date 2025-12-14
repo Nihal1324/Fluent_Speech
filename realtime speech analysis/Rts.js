@@ -240,7 +240,7 @@ function extractJsonFromCodeBlock(text) {
 }
 
 async function getSpeechReview(transcript) {
-    // const apiKey = 'AIzaSyDmCVhkghMGdJoRoNPL8IoblwUM-8enwU4';  // Use a valid API key here
+    // Current stable model name
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyC9nR1VuCI9MIrrAEXQNFhg9e_o7vazvxY`;
 
     const body = {
@@ -248,19 +248,22 @@ async function getSpeechReview(transcript) {
             {
                 parts: [
                     {
+                        // 🌟 REVISED PROMPT TEXT AND JSON STRUCTURE 🌟
                         text: `You are a public speaking coach. Analyze the following speech and respond ONLY in JSON format like this:
 {
   "clarity": "...",
   "structure": "...",
   "filler_words": "...",    
   "enthusiasm": "...",
+  "sentiment": "{category} ({probability}%)", 
   "suggestions": "...",
   "score": "X/10"
 }
+For the "sentiment" field, determine the dominant emotion (e.g., "Positive", "Neutral", "Excited", "Confident", "Anxious", "Frustrated", "Sad") and estimate its probability as a percentage based on the text's tone, content, and word choice. The format MUST be "{category} ({probability}%)".
 In the "suggestions" field, if you think the user would benefit, recommend one or more of these modules from our app: Professional Coaching Modules, Articulation Exercises, Breathing Exercises, Tongue Twisters, Expert and Coach Consultation, Regular Meets, Community Practice Rooms, Speech Challenge Tournaments. Be specific about which and why.
 Here is the speech:
 "${transcript}"`
-
+                        // 🌟 END OF REVISIONS 🌟
                     }
                 ]
             }
@@ -277,13 +280,21 @@ Here is the speech:
         });
 
         if (!response.ok) {
-            throw new Error('API request failed with status: ' + response.status);
+            // Enhanced logging for better debugging (as suggested previously)
+            const errorBody = await response.text(); 
+            console.error('API Error Response Status:', response.status);
+            console.error('API Error Response Body:', errorBody);
+            throw new Error(`API request failed with status: ${response.status}. See console for details.`);
         }
 
         const data = await response.json();
         const reviewRaw = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+        
+        // Log the raw response for debugging parsing issues
+        console.log('Gemini Raw Response Text:', reviewRaw); 
 
         try {
+            // NOTE: You still need to ensure 'extractJsonFromCodeBlock' is defined!
             const cleanJson = extractJsonFromCodeBlock(reviewRaw);
             const reviewJson = JSON.parse(cleanJson);
             return reviewJson;
@@ -294,7 +305,7 @@ Here is the speech:
 
     } catch (error) {
         console.error('Error getting review:', error);
-        throw error;  // Rethrow the error so that it can be handled by calling functions
+        throw error; 
     }
 }
 function highlightModules(text) {
@@ -321,13 +332,18 @@ function highlightModules(text) {
 
 async function analyzeSpeech(transcript) {
     loadingEl.classList.remove('hidden');
-    retryBtn.classList.add('hidden');
+    // Ensure retryBtn is defined or passed in scope if it's not global
+    const retryBtn = document.getElementById('retryBtn'); 
+    if (retryBtn) retryBtn.classList.add('hidden');
 
     // Clear old review
     document.getElementById('clarity-text').textContent = 'Waiting...';
     document.getElementById('structure-text').textContent = 'Waiting...';
     document.getElementById('filler-text').textContent = 'Waiting...';
     document.getElementById('enthusiasm-text').textContent = 'Waiting...';
+    // 🌟 ADDED: Reset the new Sentiment card 🌟
+    document.getElementById('sentiment-text').textContent = 'Waiting...'; 
+    
     document.getElementById('suggestions-text').textContent = 'Waiting...';
     document.getElementById('score-text').textContent = '- /10';
 
@@ -339,17 +355,21 @@ async function analyzeSpeech(transcript) {
             document.getElementById('structure-text').textContent = review.structure || 'No data';
             document.getElementById('filler-text').textContent = review.filler_words || 'No data';
             document.getElementById('enthusiasm-text').textContent = review.enthusiasm || 'No data';
+            
+            // 🌟 ADDED: Populate the new Sentiment card 🌟
+            document.getElementById('sentiment-text').textContent = review.sentiment || 'No data'; 
+            
             document.getElementById('suggestions-text').innerHTML = highlightModules(review.suggestions) || 'No data';
             document.getElementById('score-text').textContent = review.score || '- /10';
         } else {
             document.getElementById('clarity-text').textContent = 'Error loading review.';
-            retryBtn.classList.remove('hidden');
+            if (retryBtn) retryBtn.classList.remove('hidden');
         }
     } catch (error) {
         console.error('Error getting review:', error);
         loadingEl.classList.add('hidden');
         document.getElementById('clarity-text').textContent = 'Error analyzing speech.';
-        retryBtn.classList.remove('hidden');
+        if (retryBtn) retryBtn.classList.remove('hidden');
     }
 }
 
