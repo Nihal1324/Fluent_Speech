@@ -241,7 +241,7 @@ function extractJsonFromCodeBlock(text) {
 
 async function getSpeechReview(transcript) {
     // const apiKey = 'AIzaSyDmCVhkghMGdJoRoNPL8IoblwUM-8enwU4';  // Use a valid API key here
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDmCVhkghMGdJoRoNPL8IoblwUM-8enwU4`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyC9nR1VuCI9MIrrAEXQNFhg9e_o7vazvxY`;
 
     const body = {
         contents: [
@@ -252,7 +252,7 @@ async function getSpeechReview(transcript) {
 {
   "clarity": "...",
   "structure": "...",
-  "filler_words": "...",
+  "filler_words": "...",    
   "enthusiasm": "...",
   "suggestions": "...",
   "score": "X/10"
