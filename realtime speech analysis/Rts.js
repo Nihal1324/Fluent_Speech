@@ -240,8 +240,8 @@ function extractJsonFromCodeBlock(text) {
 }
 
 async function getSpeechReview(transcript) {
-    // Current stable model name
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyC9nR1VuCI9MIrrAEXQNFhg9e_o7vazvxY`;
+    // The API key is kept server-side in Vercel's GEMINI_API_KEY environment variable.
+    const url = '/api/gemini-speech-review';
 
     const body = {
         contents: [

@@ -151,10 +151,8 @@
 
         // Function to get AI response from Gemini API
         async function getAIResponse(userText) {
-            // Replace 'YOUR_GEMINI_API_KEY' with your actual Gemini API key
-            // IMPORTANT: In a production environment, do not hardcode API keys. Use environment variables or a secure backend proxy.
-            const apiKey = 'AIzaSyDmCVhkghMGdJoRoNPL8IoblwUM-8enwU4'; // Replace this with your key securely
-            const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+            // The API key is kept server-side in Vercel's GEMINI_API_KEY environment variable.
+            const endpoint = '/api/gemini-chat';
             
             // Prepare the request payload with the user's message
             // Note: System instructions might not be supported in this API version, combining with user prompt as a workaround
